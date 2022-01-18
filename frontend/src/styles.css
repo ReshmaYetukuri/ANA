@@ -1,0 +1,53 @@
+@import url("https://unpkg.com/normalize.css@8.0.1/normalize.css");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC");
+
+body {
+  font-family: "Open Sans";
+  font-size: 16px;
+  color: #5c6372;
+}
+
+body * {
+  outline: none;
+  line-height: 22px;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+
+.page {
+  width: 100%;
+}
+
+a {
+  color: #1faff3;
+  text-decoration: none;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 50px 60px;
+}
+
+.page .logo {
+  margin-bottom: 80px;
+}
+
+.page .icons {
+  text-align: center;
+  margin: 0;
+}
+
+.page .icons .icon {
+  margin: 0 20px;
+}
+
+.page .footer {
+  text-align: center;
+}
