@@ -1,0 +1,12 @@
+@import '~bootstrap/scss/bootstrap';
+@import '_typography';
+
+.breadCrumbDivFlex {
+  position: relative;
+  top: 20px;
+  display: flex;
+  .breadCrumbDivMain {
+    width: 20%;
+    display: flex;
+  }
+}

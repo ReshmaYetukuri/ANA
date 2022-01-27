@@ -1,0 +1,139 @@
+version: 2.1
+
+# 外部サービスと接続するためのOrbsを指定
+orbs:
+  aws-ecr: circleci/aws-ecr@6.7.1
+  aws-s3: circleci/aws-s3@3.0.0
+  aws-cli: circleci/aws-cli@1.4.0
+
+# Build, Deployで使用するExecutorを設定
+executors:
+  default:
+    docker:
+      - image: circleci/node:14.17.3-stretch-browsers
+    working_directory: ~/repo
+
+# Build, Deployで使用するcommandsを設定
+commands:
+  # yarn installによる依存関係パッケージを追加
+  yarn_install:
+    steps:
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run: 
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+  
+  # 単体/内部結合テスト
+  yarn_test:
+    steps:
+      - run: 
+          name: Run Unit test
+          command: yarn test:ci
+          environment:
+            JEST_HTML_REPORTERS_PUBLIC_PATH: ./reports/
+            JEST_HTML_REPORTERS_FILE_NAME: 'jest-report_<< pipeline.git.branch >>.html'
+            JEST_HTML_REPORTERS_PAGE_TITLE: '<< pipeline.git.branch >>_#<< pipeline.number >>'
+
+  # 静的コード検証
+  yarn_lint:
+    steps:
+      - run:
+          name: Run ESLint
+          command: yarn lint:es --format junit -o reports/js-eslint-results.xml
+      - run:
+          name: Run StyleLint
+          command: yarn lint:style --custom-formatter 'node_modules/stylelint-junit-formatter' > reports/js-stylelint-results.xml
+
+  # ビルド
+  yarn_build:
+    steps:
+      - run:
+          name: Run Build
+          command: yarn build
+
+jobs:
+  # CI feature
+  build-feature:
+    executor: default
+    steps:
+      - checkout
+      - yarn_install
+      - yarn_test
+      - yarn_lint
+      - yarn_build
+
+      # テスト結果保存
+      - store_test_results:
+          path: ./reports/
+
+      # 成果物保存
+      - store_artifacts:
+          path: ./reports/
+
+  # CI develop
+  build-develop:
+    executor: default
+    steps:
+      # チェックアウト
+      - checkout
+      - yarn_install
+      - yarn_test
+      - yarn_lint
+      - yarn_build
+      
+      # テスト結果保存
+      - store_test_results:
+          path: ./reports/
+          
+      - store_artifacts:
+          path: ./reports/
+  # CD develop to DEV
+  deploy-dev:
+    executor: default
+    steps:
+      - checkout
+      - yarn_install
+      - yarn_build
+      - aws-s3/sync:
+          from: build
+          to: 's3://ana-cas-poa-s3bukt-gui-frontend-app'
+  # CD develop to SANDBOX
+  deploy-sandbox:
+    executor: default
+    steps:
+      - checkout
+      - yarn_install
+      - yarn_build
+      - aws-s3/sync:
+          from: build
+          to: 's3://ana-cas-sandbox-s3bukt-gui-frontend-app'
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build-feature:
+          filters:
+            branches:
+              only: /^feature-.*/
+      - build-develop:
+          filters:
+            branches:
+              only: 
+                - develop
+                - sandbox
+      - deploy-dev:
+          filters:
+            branches:
+              only: develop
+      - deploy-sandbox:
+          filters:
+            branches:
+              only: sandbox
