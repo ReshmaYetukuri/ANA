@@ -55,6 +55,7 @@ export type TabViewProps = {
     title: JSX.Element | string;
     component?: JSX.Element | string;
   }[];
+  // onBtnClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 export const TabsView = ({ tabList, ...props }: TabViewProps) => (
@@ -66,24 +67,13 @@ export const TabsView = ({ tabList, ...props }: TabViewProps) => (
           title={tab.title}
           key={`tabList-${tab.eventKey}`}
         >
-          {/* {tab.component} */}
-          Bacon ham hock kevin boudin rump leberkas. Spare ribs kielbasa shankle
-          hamburger tongue jerky pork chop bresaola. Shoulder pork belly short
-          loin strip steak prosciutto frankfurter. Beef kevin t-bone venison
-          pork belly meatball chuck short loin bresaola doner picanha. Cupim
-          short ribs short loin brisket bacon rump porchetta venison t-bone
-          drumstick pork chop hamburger meatball. Pork loin frankfurter shankle
-          pork picanha pastrami. Pork loin pancetta venison short loin
-          frankfurter. Shoulder doner swine ball tip venison porchetta. Capicola
-          beef meatball, tri-tip strip steak kevin jowl cupim venison. Tongue
-          fatback ribeye leberkas biltong t-bone. Pancetta frankfurter meatloaf,
-          pig t-bone picanha ham fatback chicken drumstick short loin cupim
-          short ribs cow. Beef short ribs ribeye meatball filet mignon andouille
-          frankfurter swine turducken bresaola spare ribs cupim picanha cow.
-          Drumstick tenderloin ham hock shoulder ground round, beef strip steak
-          flank. Salami rump beef ground round.
+          {tab.component}
         </Tab>
       ))}
     </Tabs>
   </TabsWrapper>
 );
+
+// TabsView.defaultProps = {
+//   onBtnClick: null,
+// };
