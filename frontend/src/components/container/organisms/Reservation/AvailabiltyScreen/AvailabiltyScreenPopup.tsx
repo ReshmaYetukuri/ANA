@@ -6,6 +6,7 @@ import { TabsView } from '../../../../presentational/atoms/tab-view/TabsView';
 import { Breadcrumbs } from '../../../../presentational/molecules/Breadcrumb/Breadcrumbs';
 import { BootstrapPopUpSkeleton } from '../../../../presentational/molecules/BootstrapPopUpSkeleton/BootstrapPopUpSkeleton';
 import FlightSearchHistory from './FlightSearchHistory';
+import ARNKDateRegister from './ARNKDateRegister';
 
 const breadcrumbsTitles = [
   {
@@ -44,6 +45,7 @@ const TABLEFTDIV = styled.div`
 export const AvailabiltyScreenPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFSHOpen, setIsFSHOpen] = useState(false);
+  const [isARNKOpen, setIsARNKOpen] = useState(false);
   const tabList = [
     {
       eventKey: 'owrt',
@@ -68,7 +70,7 @@ export const AvailabiltyScreenPopup = () => {
     {
       eventKey: 'loadingList',
       title: 'Loading List',
-      component: <HistoryIconButton onBtnClick={() => alert('Loading List')} />,
+      component: <HistoryIconButton onBtnClick={() => setIsARNKOpen(true)} />,
     },
     {
       eventKey: 'fareQuoteDisplay',
@@ -107,6 +109,12 @@ export const AvailabiltyScreenPopup = () => {
         <FlightSearchHistory
           openFSHPopUp={isFSHOpen}
           onCloseFSHPopUp={() => setIsFSHOpen(false)}
+        />
+      ) : null}
+      {isARNKOpen ? (
+        <ARNKDateRegister
+          openFSHPopUp={isARNKOpen}
+          onCloseFSHPopUp={() => setIsARNKOpen(false)}
         />
       ) : null}
     </>

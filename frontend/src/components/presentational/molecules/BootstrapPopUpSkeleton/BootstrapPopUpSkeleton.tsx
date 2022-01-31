@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 
 import styled from '@emotion/styled';
+import { ErrorComponent } from 'components/presentational/atoms/ARNK/Error/ErrorComponent';
+import { RegisterButton } from 'components/presentational/atoms/Buttons/RegisterButton';
 import { CommonButton } from '../../atoms/Buttons/Button';
 import { FooterLabelInput } from '../FooterLabelInput/FooterLabelInput';
-
 import iconHandy30 from '../../../../assets/images/icn_handy_30-30.png';
 import iconHelp30 from '../../../../assets/images/icn_help_30-30.png';
 import popUpCloseBtn from '../../../../assets/images/pop_up_close.png';
@@ -50,8 +51,13 @@ type BootstrapPopUpSkeletonProps = {
   showCloseBtn?: boolean;
   showSelectBtn?: boolean;
   showLabelInputBtn?: boolean;
+  showRegisterBtn?: boolean;
   children: JSX.Element | JSX.Element[] | string;
+  handleRegister?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   onClosePopUp?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  errorData?: {
+    errorMsg: string;
+  }[];
 };
 
 export const BootstrapPopUpSkeleton = ({
@@ -62,7 +68,10 @@ export const BootstrapPopUpSkeleton = ({
   showCloseBtn,
   showSelectBtn,
   showLabelInputBtn,
+  showRegisterBtn,
   onClosePopUp,
+  errorData,
+  handleRegister,
 }: BootstrapPopUpSkeletonProps) => {
   const [show, setShow] = useState(openPopUp);
   const handleClose = () => setShow(false);
@@ -81,6 +90,7 @@ export const BootstrapPopUpSkeleton = ({
       >
         <Modal.Header>
           <Label>{label}</Label>
+          {!!errorData && <ErrorComponent errors={errorData} />}
           <Buttons onClosePopUp={onClosePopUp} />
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>
@@ -90,6 +100,9 @@ export const BootstrapPopUpSkeleton = ({
           ) : null}
           {showLabelInputBtn ? <FooterLabelInput /> : null}
           {showSelectBtn ? <CommonButton name="Select" /> : null}
+          {showRegisterBtn ? (
+            <RegisterButton name="Register" onclick={handleRegister} />
+          ) : null}
         </Footer>
       </Modal>
     </>
@@ -102,6 +115,9 @@ BootstrapPopUpSkeleton.defaultProps = {
   showCloseBtn: false,
   showSelectBtn: false,
   showLabelInputBtn: false,
+  showRegisterBtn: false,
+  errorData: [],
+  handleRegister: false,
 };
 export default BootstrapPopUpSkeleton;
 
