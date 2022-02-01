@@ -1,22 +1,13 @@
 import 'App.scss';
-// import { BootstrapPopUpButton } from './components/presentational/atoms/BootstrapPopUpButton/BootstrapPopUpButton';
-import AvailabiltyScreen from './components/container/templates/Reservation/AvailabiltyScreen/AvailabiltyScreen';
+import HistoryIconButton from 'components/presentational/atoms/Buttons/HistoryIconButton';
+import { CheckBox } from 'components/presentational/atoms/CheckBox/CheckBox';
+import { Breadcrumbs } from 'components/presentational/molecules/Breadcrumb/Breadcrumbs';
+
 
 export const App = () => (
+
   <>
-    {/* <BootstrapPopUpButton />
-    <br />
-    <br /> */}
-    <AvailabiltyScreen />
-    {/* <PopUpWindow headingLabel="Enter Search Criteria (Revenue/Award)">
-      <CRUMBDIV>
-        <Breadcrumbs pages={breadcrumbsTitles} />
-      </CRUMBDIV>
-      <TABDIV>
-        <TabsView defaultActiveKey="owrt" tabList={tabList} />
-        <TABLEFTDIV />
-      </TABDIV>
-    </PopUpWindow> */}
+    <div>Hai</div>
   </>
 );
 
