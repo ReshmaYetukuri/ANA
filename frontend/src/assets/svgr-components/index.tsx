@@ -360,6 +360,7 @@ export { default as LeftArrowBlue } from './LeftArrowBlue';
 export { default as LeftArrowRed } from './LeftArrowRed';
 export { default as ListAdd } from './ListAdd';
 export { default as Loupe } from './Loupe';
+export { default as MarvelCloseButton } from './MarvelCloseButton';
 export { default as SkipGreenAllW44H40 } from './SkipGreenAllW44H40';
 export { default as SkAna } from './SkAna';
 export { default as SkBlue } from './SkBlue';

@@ -7,6 +7,7 @@ import SvgIcnSwipe from 'assets/svgr-components/IcnSwipe';
 import SvgIconCacao from 'assets/svgr-components/IconCacao';
 import SvgIconPHtml from 'assets/svgr-components/IconPHtml';
 import SvgLoupe from 'assets/svgr-components/Loupe';
+import SvgMarvelCloseButton from 'assets/svgr-components/MarvelCloseButton';
 import constants from '../../../../constants/constants.module.scss';
 
 const Button = styled.button`
@@ -48,8 +49,8 @@ const returnIcon = (type: string) => {
       return <SvgButtonWebMindsSmall />;
     // case 'calendar':
     //   return <Sv />;
-    // case 'close':
-    //   return </>;
+    case 'close':
+      return <SvgMarvelCloseButton />;
     case 'usefulTools':
       return <SvgIcnHandy3030 />;
 
