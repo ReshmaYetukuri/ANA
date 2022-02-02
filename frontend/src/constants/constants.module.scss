@@ -85,9 +85,11 @@ $standardButtonWidth: 60px;
 $standardButtonHeight: 25px;
 $listTableTitleTextSize: 19px;
 
+//newly added colors
+$whiteColor:rgb(255,255,255);
+
 :export {
   vacantSeatSecond: $vacantSeatSecond;
-  basicBgColor: $basicBgColor;
   basicColor: $whiteColor;
   basicBgColor: $basicBgColor;
 }
