@@ -55,7 +55,7 @@
     "prepare": "simple-git-hooks > nul",
     "storybook": "start-storybook - 6006",
     "build:storybook": "build-storybook -o build/storybook",
-    "icons": "svgr -d ./src/assets/svgrIcons ./src/assets/icons"
+    "create-svgr": "svgr -d ./src/assets/svgrIcons ./src/assets/icons"
   },
   "eslintConfig": {
     "extends": [
