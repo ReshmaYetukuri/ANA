@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import styled from "@emotion/styled";
 
-const LINKLABEL = styled.label({
+const LinkLabelStyle = styled.label({
   fontFamily: "Noto Sans-Light",
 });
 
 export interface LinkelementProps {
     name: string;
 }
-const LinkLabel:FC<LinkelementProps> = ({name}) => <LINKLABEL>{name}</LINKLABEL>
+const LinkLabel:FC<LinkelementProps> = ({name}) => <LinkLabelStyle>{name}</LinkLabelStyle>
 export default LinkLabel
