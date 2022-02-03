@@ -28,6 +28,10 @@ const Button = styled.button<ButtonProps>`
     -webkit-box-shadow: 0px 0px 5px 2px ${constants.basicBgColor};
     border-width: 1.5px;
   }
+  svg {
+    width:100%;
+    height:100%;
+  }
 `;
 
 type IconButtonProps = {
