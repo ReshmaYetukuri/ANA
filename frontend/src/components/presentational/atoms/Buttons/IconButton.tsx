@@ -12,11 +12,7 @@ import SvgMarvelCloseButton from 'assets/svgr-components/MarvelCloseButton';
 import constants from '../../../../constants/styleConstants.module.scss';
 
 const Button = styled.button<ButtonProps>`
-  background: linear-gradient(
-    rgb(203, 225, 236) 10%,
-    #fff 40%,
-    rgb(203, 225, 236)
-  );
+  background:${constants.commonButtonGradient}
   border-width: 1px;
   border-color: ${constants.basicBgColor};
   text-align: center;

@@ -86,7 +86,7 @@ $standardButtonHeight: 25px;
 $listTableTitleTextSize: 19px;
 
 //newly added colors
-$whiteColor:rgb(255,255,255);
+$contentColor:rgb(255,255,255); //white
 
 
 //Gradient color
@@ -163,7 +163,7 @@ $commonButtonGradient: linear-gradient(
   standardButtonHeight:$standardButtonHeight;
   listTableTitleTextSize:$listTableTitleTextSize;
   commonButtonGradient:$commonButtonGradient;
-
+  contentColor:$contentColor
 
 }
 
