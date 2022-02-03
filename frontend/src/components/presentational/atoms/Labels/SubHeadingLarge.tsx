@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-// import { Arrow } from 'assets/svgr-components';
+import { FareComparisonTitle } from 'assets/svgr-components';
 import { FC } from 'react';
 import { Label } from './Label';
 import constants from '../../../../constants/styleConstants.module.scss';
@@ -8,9 +8,9 @@ const Div = styled.div`
   display : flex;
   flex-direction : row;
   font-weight: 700;
-  font-size:large;
+  font-size: x-large;
   svg {
-    height:1rem;
+    height:2rem;
   }
 `
 
@@ -21,7 +21,7 @@ interface SubHeadingLargeProps {
 export const SubHeadingLarge:FC<SubHeadingLargeProps> = ({label}) => 
    (
      <Div>
-       
+       <FareComparisonTitle/>
        <Label label={label} fontColor={constants.itemTitleBgColor1}/>
      </Div>
     )
