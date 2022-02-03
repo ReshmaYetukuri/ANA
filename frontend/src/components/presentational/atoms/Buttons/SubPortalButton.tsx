@@ -1,13 +1,14 @@
 import {FC} from "react"
 import styled from "@emotion/styled"
+import constants from '../../../../constants/styleConstants.module.scss';
 
 type ButtonStyledProps= {
     width?:string;
 }
 const Button=styled.button<ButtonStyledProps>`
-  color:#306767;
+  color:${constants.gradientColor1};
   padding: 8px;
-  background: linear-gradient(rgb(203, 225, 236) 10%,#fff 40%, rgb(203, 225, 236));
+  background: ${constants.commonButtonGradient};
   border-width:1px;
   text-align: left;
   font-weight: bolder;
@@ -16,13 +17,12 @@ const Button=styled.button<ButtonStyledProps>`
 `
 
 const Span=styled.span`
-  color: red;
+  color: ${constants.errorColor};
   font-size: 1.5rem;
   font-weight: 900;
-  margin-left: 1rem;
-  padding-top:8px;
+  padding-top:6px;
   float: left;
-  margin-right:10px;
+  margin-right:8px;
 ` 
    
 type SubPortalButtonProps ={

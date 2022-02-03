@@ -32,10 +32,10 @@ RadioWithLabel.defaultProps={
     isSelected:false,
     radioButtonChange:()=>{
     // on change default function
-},
+    },
     fontColor:'black',
     onClick:()=>{
-        // on change default function
+        // on click default function
     },
     
 
