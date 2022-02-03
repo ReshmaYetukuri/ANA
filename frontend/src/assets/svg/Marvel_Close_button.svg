@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="42" viewBox="0 0 43 42">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ea796c"/>
+      <stop offset="0.481" stop-color="#b8493a"/>
+      <stop offset="1" stop-color="#db2b1f"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_4305" data-name="Group 4305" transform="translate(-4 -4)">
+    <g id="Group_4304" data-name="Group 4304" transform="translate(-8912.712 -255.528)">
+      <g id="Rectangle_1230" data-name="Rectangle 1230" transform="translate(8916.712 259.528)" stroke="#fff" stroke-width="1.5" fill="url(#linear-gradient)">
+        <rect width="43" height="42" rx="5" stroke="none"/>
+        <rect x="0.75" y="0.75" width="41.5" height="40.5" rx="4.25" fill="none"/>
+      </g>
+      <g id="Group_4303" data-name="Group 4303" transform="translate(8930.685 273.685)">
+        <path id="Union_14" data-name="Union 14" d="M7.191,7.191,0,14.382,7.191,7.191,0,0,7.191,7.191,14.382,0,7.191,7.191l7.191,7.191Z" transform="translate(0.85 0.25)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <path id="Union_15" data-name="Union 15" d="M7.5,7.5,0,15,7.5,7.5,0,0,7.5,7.5,15,0,7.5,7.5,15,15Z" transform="translate(0.027 -0.157)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

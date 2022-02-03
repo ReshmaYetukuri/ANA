@@ -1,0 +1,224 @@
+//COMMON COLORS
+$basicColor: rgb(60, 140, 146); //turquoise green
+$basicBgColor: rgb(238, 238, 238); //light grey
+$basicBgColorInputField: rgb(255, 255, 255); //white
+$standardTextColor: rgb(
+  0,
+  0,
+  0
+); //black  for standard , substandard and emphasis texts
+$dimmedTextColor: rgb(80, 80, 80); // dark gray
+$linkColor: rgb(0, 30, 135); //blue
+$tableTitleColor: rgb(0, 124, 133); // green-gradient
+$inputCapableColBgColor: rgb(215, 235, 235); // cyan
+$contentConfirmationMessageColor: rgb(
+  160,
+  0,
+  200
+); //  content-confirmation screen heading label color
+$amberSubPortalButtonBgColor: rgb(253, 208, 0);
+$manualTitleBgColor: rgb(220, 255, 180);
+$htmlBrowserDisplayBgColor1: rgb(220, 255, 255); // light green
+$htmlBrowserDisplayBgColor2: rgb(255, 235, 250); // light pink
+$htmlBrowserDisplayBgColor3: rgb(125, 0, 55);
+$htmlBrowserDisplayBgColor4: rgb(235, 250, 255); //light blue
+$htmlBrowserDisplayBgColor5: rgb(0, 60, 125); //blue
+$htmlBrowserDisplayBgColor6: rgb(120, 85, 0); //brown
+$htmlBrowserDisplayBgColor7: rgb(255, 245, 230); //light brown
+
+//Basic color(special screen such as main portal screen and generic popup screen)
+$subPortalBgColor: rgb(237, 255, 255);
+$itemTitleBgColor1: rgb(0, 115, 125); //LABG-1
+$itemTitleBgColor2: rgb(150, 150, 150); //LABG-2
+$itemTitleBgColor3: rgb(200, 200, 200); //LABG-3
+$gradientColor1: rgb(0, 124, 133); //GR-1 S start color
+$gradientColor2: rgb(60, 178, 180); //GR-1 E end color
+$errorMessageBgColor: rgb(255, 225, 225); //ERRBG-1
+$errorMessageFontColor: rgb(255, 0, 0); //ERRFG-1
+$inputFieldFocusBgColor: rgb(255, 255, 145); //INPBG-1
+$priorityFieldBgColor: rgb(145, 255, 155); //INPBG-2
+
+//Basic color(main portal screen Change PNR)
+$PAXorSEGAddedBgColor1: rgb(5, 45, 145);
+$PAXorSEGAddedBgColor2: rgb(205, 240, 255);
+$PAXorSEGDeletedBgColor1: rgb(140, 140, 140);
+$PAXorSEGDeletedBgColor2: rgb(230, 230, 230);
+$PNRonChangeBgColor: rgb(210, 255, 145);
+
+//Basic color(in-place-list)
+$selectedRowBgColor: rgb(255, 255, 200); //LISTBG-2
+$unselectedRowBgColor: rgb(160, 160, 160); //LISTBG-2
+
+//Representation of Multi-Airport(when inquiring for a vacant seat)
+$vacantSeatMain: black;
+$vacantSeatSecond: blue;
+$vacantSeatThird: pink;
+
+//popups
+$popupWindowHeaderColor: rgb(0, 115, 125);
+$popupFooterColor: rgb(195, 195, 195);
+$errorColor: rgb(210, 0, 0);
+$partiallyExecutedErrorColor: orange;
+$warningColor: rgb(255, 200, 60);
+$cautionColor: rgb(255, 200, 60);
+$normalInformationColor: rgb(0, 115, 125);
+
+//popup window size
+$popupOuterMargin: 10px;
+$popupContentPadding: 20px;
+$popupPadding: 10px;
+$popupWindowFooterBandHeight: 50px;
+
+//Fonts
+$standardTextSize: 20px;
+$standardSubTextsize: 17px;
+$breadCrumbsFontSize: 15px;
+$crypticResultFontSize: 21px;
+$crypticResultFontSizeHTML: 17px;
+$contentConfirmationMessageFontSize: 21px;
+$controlInfoTextFontSize: 16px;
+$htmlBrowserDisplayFontSize: 32px;
+
+//Standard Control(Form elements Size)
+$standardControlHeight: 20px;
+$standardButtonWidth: 60px;
+$standardButtonHeight: 25px;
+$listTableTitleTextSize: 19px;
+
+//newly added colors
+$whiteColor:rgb(255,255,255);
+
+
+//Gradient color
+$commonButtonGradient: linear-gradient(
+  rgb(203, 225, 236) 10%,
+  #fff 40%,
+  rgb(203, 225, 236)
+);
+
+
+
+
+:export {
+  vacantSeatSecond: $vacantSeatSecond;
+  basicColor: $basicColor;
+  basicBgColor: $basicBgColor;
+  basicBgColorInputField:$basicBgColorInputField;
+  standardTextColor:$standardTextColor;
+  dimmedTextColor:$dimmedTextColor;
+  linkColor:$linkColor;
+  tableTitleColor:$tableTitleColor;
+  inputCapableColBgColor:$inputCapableColBgColor;
+  contentConfirmationMessageColor:$contentConfirmationMessageColor;
+  amberSubPortalButtonBgColor:$amberSubPortalButtonBgColor;
+  manualTitleBgColor:$manualTitleBgColor;
+  htmlBrowserDisplayBgColor1:$htmlBrowserDisplayBgColor1;
+  htmlBrowserDisplayBgColor2:$htmlBrowserDisplayBgColor2;
+  htmlBrowserDisplayBgColor3:$htmlBrowserDisplayBgColor3;
+  htmlBrowserDisplayBgColor4:$htmlBrowserDisplayBgColor4;
+  htmlBrowserDisplayBgColor5:$htmlBrowserDisplayBgColor5;
+  htmlBrowserDisplayBgColor6:$htmlBrowserDisplayBgColor6;
+  htmlBrowserDisplayBgColor7:$htmlBrowserDisplayBgColor7;
+  subPortalBgColor:$subPortalBgColor;
+  itemTitleBgColor1:$itemTitleBgColor1;
+  itemTitleBgColor2:$itemTitleBgColor2;
+  itemTitleBgColor3:$itemTitleBgColor3;
+  gradientColor1:$gradientColor1;
+  gradientColor2:$gradientColor2;
+  errorMessageBgColor:$errorMessageBgColor;
+  errorMessageFontColor:$errorMessageFontColor;
+  inputFieldFocusBgColor:$inputFieldFocusBgColor;
+  priorityFieldBgColor:$priorityFieldBgColor;
+  PAXorSEGAddedBgColor1:$PAXorSEGAddedBgColor1;
+  PAXorSEGAddedBgColor2:$PAXorSEGAddedBgColor2;
+  PAXorSEGDeletedBgColor1:$PAXorSEGDeletedBgColor1;
+  PAXorSEGDeletedBgColor2:$PAXorSEGDeletedBgColor2;
+  PNRonChangeBgColor:$PNRonChangeBgColor;
+  selectedRowBgColor:$selectedRowBgColor;
+  unselectedRowBgColor:$unselectedRowBgColor;
+  vacantSeatMain:$vacantSeatMain;
+  vacantSeatSecond:$vacantSeatSecond;
+  vacantSeatThird:$vacantSeatThird;
+  popupWindowHeaderColor:$popupWindowHeaderColor;
+  popupFooterColor:$popupFooterColor;
+  errorColor:$errorColor;
+  partiallyExecutedErrorColor:$partiallyExecutedErrorColor;
+  warningColor:$warningColor;
+  cautionColor:$cautionColor;
+  normalInformationColor:$normalInformationColor;
+  popupOuterMargin:$popupOuterMargin;
+  popupContentPadding:$popupContentPadding;
+  popupPadding:$popupPadding;
+  popupWindowFooterBandHeight:$popupWindowFooterBandHeight;
+  standardTextSize:$standardTextSize;
+  standardSubTextsize:$standardSubTextsize;
+  breadCrumbsFontSize:$breadCrumbsFontSize;
+  crypticResultFontSize:$crypticResultFontSize;
+  crypticResultFontSizeHTML:$crypticResultFontSizeHTML;
+  contentConfirmationMessageFontSize:$contentConfirmationMessageFontSize;
+  controlInfoTextFontSize:$controlInfoTextFontSize;
+  htmlBrowserDisplayFontSize:$htmlBrowserDisplayFontSize;
+  standardControlHeight:$standardControlHeight;
+  standardButtonWidth:$standardButtonWidth;
+  standardButtonHeight:$standardButtonHeight;
+  listTableTitleTextSize:$listTableTitleTextSize;
+  commonButtonGradient:$commonButtonGradient;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
