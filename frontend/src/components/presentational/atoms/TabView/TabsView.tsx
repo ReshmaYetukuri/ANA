@@ -1,6 +1,6 @@
 import { Tab, Tabs } from 'react-bootstrap';
-// import { TabsWrapper } from "./TabsWrapper";
 import styled from '@emotion/styled';
+import { FC } from 'react';
 
 export const TabsWrapper = styled.div`
   font-family: 'Noto Sans JP-100';
@@ -19,19 +19,15 @@ export const TabsWrapper = styled.div`
     font-weight: 700;
   }
   .nav-link.active {
-    // border-top: 4px solid #fece4c;
     background: #c5d9f2;
     line-height: 1rem;
   }
   .nav-tabs .nav-link.active {
     border-color: #c5d9f2;
   }
-  .nav-link:hover {
-    // border-color: white white white white;
-  }
+
   .nav-link.active:hover {
     background: #c5d9f2;
-    // border-top: 4px solid #fece4c;
   }
   .tab-content {
     border-left: 1px solid #c5d9f2;
@@ -48,19 +44,22 @@ export const TabsWrapper = styled.div`
 `;
 
 export type TabViewProps = {
-  onSelect?: any;
+  onSelect?: () => void;
   defaultActiveKey?: string | number;
   tabList: {
-    eventKey: string | number;
+    eventKey: string;
     title: JSX.Element | string;
     component?: JSX.Element | string;
   }[];
-  // onBtnClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-export const TabsView = ({ tabList, ...props }: TabViewProps) => (
+export const TabsView: FC<TabViewProps> = ({
+  tabList,
+  defaultActiveKey,
+  onSelect,
+}) => (
   <TabsWrapper>
-    <Tabs {...props}>
+    <Tabs defaultActiveKey={defaultActiveKey} onSelect={onSelect}>
       {tabList.map((tab) => (
         <Tab
           eventKey={tab.eventKey}
@@ -73,7 +72,3 @@ export const TabsView = ({ tabList, ...props }: TabViewProps) => (
     </Tabs>
   </TabsWrapper>
 );
-
-// TabsView.defaultProps = {
-//   onBtnClick: null,
-// };
