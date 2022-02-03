@@ -54,7 +54,8 @@
     "lint:style:fix": "stylelint --fix \"src/**/*.{css,less,sass,scss,tsx,jsx}\"",
     "prepare": "simple-git-hooks > nul",
     "storybook": "start-storybook - 6006",
-    "build:storybook": "build-storybook -o build/storybook"
+    "build:storybook": "build-storybook -o build/storybook",
+    "create-svgr": "svgr --ext tsx --template SvgrGeneratorScript.js -d ./src/assets/svgr-components src/assets/svg"
   },
   "eslintConfig": {
     "extends": [
@@ -75,6 +76,7 @@
     ]
   },
   "devDependencies": {
+    "@svgr/cli": "^6.2.1",
     "@emotion/babel-plugin": "^11.3.0",
     "@openapitools/openapi-generator-cli": "^2.4.12",
     "@storybook/addon-a11y": "^6.3.4",

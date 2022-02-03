@@ -1,17 +1,18 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
+import styles from '../../../../constants/constants.module.scss'
 
 export interface RegisterButtonProps {
   name: string;
   onclick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const BUTTON = styled.button`
+const Button = styled.button`
   font-size: 0.9rem;
   height: 2.4rem;
   padding: 0.3rem 2.5rem;
   margin: 0.3rem;
-  color: #fff;
+  color: ${styles.basicColor};
   background-image: linear-gradient(
     to bottom,
     #5295ff,
@@ -28,11 +29,12 @@ const BUTTON = styled.button`
   }
 `;
 
-export const PrimaryButton: FC<RegisterButtonProps> = ({
+const PrimaryButton: FC<RegisterButtonProps> = ({
   name,
   onclick,
 }) => (
-  <BUTTON type="button" className={`button-${name}`} onClick={onclick}>
+  <Button type="button" className={`button-${name}`} onClick={onclick}>
     {name}
-  </BUTTON>
+  </Button>
 );
+export default PrimaryButton
