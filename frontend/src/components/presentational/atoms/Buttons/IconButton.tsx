@@ -12,11 +12,7 @@ import SvgMarvelCloseButton from 'assets/svgr-components/MarvelCloseButton';
 import constants from '../../../../constants/styleConstants.module.scss';
 
 const Button = styled.button<ButtonProps>`
-  background: linear-gradient(
-    rgb(203, 225, 236) 10%,
-    #fff 40%,
-    rgb(203, 225, 236)
-  );
+  background:${constants.commonButtonGradient}
   border-width: 1px;
   border-color: ${constants.basicBgColor};
   text-align: center;
@@ -27,6 +23,10 @@ const Button = styled.button<ButtonProps>`
   :hover {
     -webkit-box-shadow: 0px 0px 5px 2px ${constants.basicBgColor};
     border-width: 1.5px;
+  }
+  svg {
+    width:100%;
+    height:100%;
   }
 `;
 
