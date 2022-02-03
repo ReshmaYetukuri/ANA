@@ -1,13 +1,10 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
+import constants from '../../../../constants/styleConstants.module.scss';
 
 const Button = styled.button<ButtonProps>`
   border: solid 1px;
-  background: linear-gradient(
-    rgb(203, 225, 236) 10%,
-    #fff 40%,
-    rgb(203, 225, 236)
-  );
+  background: ${constants.commonButtonGradient};
   padding: 0 5px;
   min-width: 50px;
   width: ${(props) => props.width};
@@ -18,7 +15,7 @@ const Header = styled.div`
   width: 100%;
 `;
 const Footer = styled.div`
-  color: cornflowerblue;
+  color: ${constants.basicColor};
   width: 100%;
 `;
 
@@ -46,7 +43,7 @@ const MainMenuButton: FC<MainMenuButtonProps> = ({
 );
 
 MainMenuButton.defaultProps = {
-  width: '50px',
+  width: '90px',
 };
 
 export default MainMenuButton;
