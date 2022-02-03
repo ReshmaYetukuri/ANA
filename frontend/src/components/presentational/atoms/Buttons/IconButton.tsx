@@ -1,3 +1,4 @@
+import { IconButtonTypes } from 'constants/commonTypes';
 import styled from '@emotion/styled';
 import SvgBtnHeaderRloc from 'assets/svgr-components/BtnHeaderRloc';
 import SvgButtonWebMindsSmall from 'assets/svgr-components/ButtonWebMindsSmall';
@@ -8,9 +9,9 @@ import SvgIconCacao from 'assets/svgr-components/IconCacao';
 import SvgIconPHtml from 'assets/svgr-components/IconPHtml';
 import SvgLoupe from 'assets/svgr-components/Loupe';
 import SvgMarvelCloseButton from 'assets/svgr-components/MarvelCloseButton';
-import constants from '../../../../constants/constants.module.scss';
+import constants from '../../../../constants/styleConstants.module.scss';
 
-const Button = styled.button`
+const Button = styled.button<ButtonProps>`
   background: linear-gradient(
     rgb(203, 225, 236) 10%,
     #fff 40%,
@@ -20,6 +21,9 @@ const Button = styled.button`
   border-color: ${constants.basicBgColor};
   text-align: center;
   min-width: 2rem;
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  padding: ${(props) => (props.isFullSize ? '0px' : '3px')};
   :hover {
     -webkit-box-shadow: 0px 0px 5px 2px ${constants.basicBgColor};
     border-width: 1.5px;
@@ -27,31 +31,40 @@ const Button = styled.button`
 `;
 
 type IconButtonProps = {
-  type: string;
+  width: string;
+  height: string;
+  type: IconButtonTypes;
+  isFullSize: boolean;
   onclick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-const returnIcon = (type: string) => {
+type ButtonProps = {
+  width: string;
+  height: string;
+  isFullSize: boolean;
+};
+
+const returnIcon = (type: IconButtonTypes) => {
   switch (type) {
-    case 'history':
+    case IconButtonTypes.history:
       return <SvgBtnHeaderRloc />;
-    case 'help':
+    case IconButtonTypes.help:
       return <SvgIcnHelp3030 />;
-    case 'PNRSearch':
+    case IconButtonTypes.PNRSearch:
       return <SvgIconPHtml />;
-    case 'search':
+    case IconButtonTypes.search:
       return <SvgLoupe />;
-    case 'cacao':
+    case IconButtonTypes.cacao:
       return <SvgIconCacao />;
-    case 'cardReader':
+    case IconButtonTypes.cardReader:
       return <SvgIcnSwipe />;
-    case 'webMinds':
+    case IconButtonTypes.webMinds:
       return <SvgButtonWebMindsSmall />;
     // case 'calendar':
     //   return <Sv />;
-    case 'close':
+    case IconButtonTypes.close:
       return <SvgMarvelCloseButton />;
-    case 'usefulTools':
+    case IconButtonTypes.usefulTools:
       return <SvgIcnHandy3030 />;
 
     default:
@@ -59,8 +72,21 @@ const returnIcon = (type: string) => {
   }
 };
 
-const IconButton: React.FC<IconButtonProps> = ({ type, onclick }) => (
-  <Button onClick={onclick}>{returnIcon(type)}</Button>
+const IconButton: React.FC<IconButtonProps> = ({
+  type,
+  onclick,
+  height,
+  width,
+  isFullSize,
+}) => (
+  <Button
+    onClick={onclick}
+    width={height}
+    height={width}
+    isFullSize={isFullSize}
+  >
+    {returnIcon(type)}
+  </Button>
 );
 
 export default IconButton;
