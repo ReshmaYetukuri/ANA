@@ -1,10 +1,8 @@
-import styled from "@emotion/styled";
-import { useState } from "react";
-
-import { IconButtonTypes } from "../../../assets/constants/CommonTypes";
-
-import IconButton from "../../atoms/button/IconButton";
-import { TextBox } from "../../atoms/inputField/TextBox";
+import styled from '@emotion/styled';
+import IconButton from 'components/presentational/atoms/Buttons/IconButton';
+import { TextBox } from 'components/presentational/atoms/Inputs/TextBox';
+import { IconButtonTypes } from 'constants/commonTypes';
+import { useState } from 'react';
 
 const RlocWrapper = styled.div`
   display: flex;
@@ -12,7 +10,7 @@ const RlocWrapper = styled.div`
 `;
 
 export const RLOCInput = () => {
-  const [state, setState] = useState("");
+  const [state, setState] = useState('');
 
   return (
     <RlocWrapper>
@@ -24,12 +22,12 @@ export const RLOCInput = () => {
       <IconButton
         type={IconButtonTypes.history}
         isFullSize={true}
-        width={"1.5rem"}
-        height={"1.5rem"}
+        width={'1.5rem'}
+        height={'1.5rem'}
       />
       <IconButton
-        width={"1.5rem"}
-        height={"1.5rem"}
+        width={'1.5rem'}
+        height={'1.5rem'}
         type={IconButtonTypes.cacao}
         isFullSize={true}
       />

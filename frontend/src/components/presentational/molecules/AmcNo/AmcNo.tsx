@@ -1,10 +1,8 @@
-import styled from "@emotion/styled";
-import { useState } from "react";
-
-import { IconButtonTypes } from "../../../assets/constants/CommonTypes";
-
-import IconButton from "../../atoms/button/IconButton";
-import { TextBox } from "../../atoms/inputField/TextBox";
+import styled from '@emotion/styled';
+import IconButton from 'components/presentational/atoms/Buttons/IconButton';
+import { TextBox } from 'components/presentational/atoms/Inputs/TextBox';
+import { IconButtonTypes } from 'constants/commonTypes';
+import { useState } from 'react';
 
 const AmcNoWrapper = styled.div`
   display: flex;
@@ -12,7 +10,7 @@ const AmcNoWrapper = styled.div`
 `;
 
 export const AmcNo = () => {
-  const [state, setState] = useState("");
+  const [state, setState] = useState('');
 
   return (
     <AmcNoWrapper>
@@ -24,18 +22,18 @@ export const AmcNo = () => {
       <IconButton
         type={IconButtonTypes.cacao}
         isFullSize={true}
-        width={"1.5rem"}
-        height={"1.5rem"}
+        width={'1.5rem'}
+        height={'1.5rem'}
       />
       <IconButton
-        width={"1.5rem"}
-        height={"1.5rem"}
+        width={'1.5rem'}
+        height={'1.5rem'}
         type={IconButtonTypes.cardReader}
         isFullSize={true}
       />
-       <IconButton
-        width={"1.5rem"}
-        height={"1.5rem"}
+      <IconButton
+        width={'1.5rem'}
+        height={'1.5rem'}
         type={IconButtonTypes.webMinds}
         isFullSize={true}
       />

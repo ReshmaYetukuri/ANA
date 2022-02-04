@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
-import ActiveCar from "../ActiveCar";
-import ActivePlane from "../ActivePlain";
-import { useState } from "react";
+import styled from '@emotion/styled';
+import SvgActiveCarPlane from 'assets/svgr-components/ActiveCarPlane';
+import SvgActivePlainCar02 from 'assets/svgr-components/ActivePlainCar02';
+import { useState } from 'react';
 
 type ARNKSwitchProps = {
   onClick: (state: boolean) => void;
@@ -23,7 +23,7 @@ export const ARNKSwitch = (props: ARNKSwitchProps) => {
       setState(false);
     }
   };
-  let iconName = state ? <ActivePlane /> : <ActiveCar />;
+  let iconName = state ? <SvgActiveCarPlane /> : <SvgActivePlainCar02 />;
 
   return (
     <Button
