@@ -3,7 +3,7 @@ import { FC } from 'react';
 import constants from '../../../../constants/styleConstants.module.scss';
 
 type TextBoxProps = {
-  size: number;
+  size?: number;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   value: string;
   autoFocus?: boolean;
@@ -31,4 +31,5 @@ export const TextBox: FC<TextBoxProps> = ({
 
 TextBox.defaultProps = {
   autoFocus: false,
+  size: 9,
 };

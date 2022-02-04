@@ -62,6 +62,7 @@ $partiallyExecutedErrorColor: orange;
 $warningColor: rgb(255, 200, 60);
 $cautionColor: rgb(255, 200, 60);
 $normalInformationColor: rgb(0, 115, 125);
+$popupWindowStanadardBgColor:rgb(181,205,231);
 
 //popup window size
 $popupOuterMargin: 10px;
@@ -141,6 +142,7 @@ $commonButtonGradient: linear-gradient(
   vacantSeatThird:$vacantSeatThird;
   popupWindowHeaderColor:$popupWindowHeaderColor;
   popupFooterColor:$popupFooterColor;
+  popupWindowStanadardBgColor:$popupWindowStanadardBgColor;
   errorColor:$errorColor;
   partiallyExecutedErrorColor:$partiallyExecutedErrorColor;
   warningColor:$warningColor;
