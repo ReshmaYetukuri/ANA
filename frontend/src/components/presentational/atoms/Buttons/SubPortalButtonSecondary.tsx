@@ -1,22 +1,32 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
-
-const Button = styled.button`
-  color:#00a09b;
-  background:white;
-  width:15rem;
-  height:1.5rem;
-  fontWeight:bold;
-  fontFamily:NotoSans-Light;
-  border:1px solid black
-`;
+import constants from '../../../../constants/styleConstants.module.scss'
 
 export interface SubPortalButtonSecondaryProps {
     name:string;
+    width?: string;
+    height?: string;
+    // isFullSize: boolean;
     onclick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-const SubPortalButtonSecondary:FC<SubPortalButtonSecondaryProps> = ({name,onclick,}) => <Button  type="button" className={`button-${name}`} onClick={onclick}>{name}</Button>
+type ButtonProps = {
+  width?: string;
+  height?: string;
+  // isFullSize: boolean;
+};
+
+const Button = styled.button<ButtonProps>`
+  color:#00a09b;
+  background:${constants.contentColor};
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  border:1px solid ${constants.itemTitleBgColor1}
+`;
+
+
+const SubPortalButtonSecondary:FC<SubPortalButtonSecondaryProps> = ({name,width,height,onclick,}) => <Button  width={width}
+height={height}  type="button" className={`button-${name}`} onClick={onclick}>{name}</Button>
 
 export default SubPortalButtonSecondary
   

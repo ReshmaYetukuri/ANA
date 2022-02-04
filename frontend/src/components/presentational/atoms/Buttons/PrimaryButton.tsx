@@ -1,18 +1,27 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
-import styles from '../../../../constants/constants.module.scss'
+import constants from '../../../../constants/styleConstants.module.scss'
 
 export interface RegisterButtonProps {
   name: string;
+  width?: string;
+  height?: string;
   onclick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button = styled.button`
+type ButtonProps = {
+  width?: string;
+  height?: string;
+  // isFullSize: boolean;
+};
+
+const Button = styled.button<ButtonProps>`
   font-size: 0.9rem;
-  height: 2.4rem;
-  padding: 0.3rem 2.5rem;
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  padding: 0rem 2.5rem 0rem 2.5rem;
   margin: 0.3rem;
-  color: ${styles.basicColor};
+  color: ${constants.contentColor};
   background-image: linear-gradient(
     to bottom,
     #5295ff,
@@ -21,19 +30,16 @@ const Button = styled.button`
     #287cff,
     #1673ff
   );
-  border: 1px solid #8a8686;
-  //transition: all 0.2s ease-in-out;
-  &:hover {
-    border: 2px solid #77a3e4;
-    transform: scale(1);
-  }
+  border: 1px solid #8a8686; 
 `;
 
 const PrimaryButton: FC<RegisterButtonProps> = ({
   name,
+  width,
+  height,
   onclick,
 }) => (
-  <Button type="button" className={`button-${name}`} onClick={onclick}>
+  <Button type="button" width={width} height={height} onClick={onclick}>
     {name}
   </Button>
 );
