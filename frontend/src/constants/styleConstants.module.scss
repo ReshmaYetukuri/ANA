@@ -63,6 +63,7 @@ $warningColor: rgb(255, 200, 60);
 $cautionColor: rgb(255, 200, 60);
 $normalInformationColor: rgb(0, 115, 125);
 $popupWindowStanadardBgColor:rgb(181,205,231);
+$standardControlBgColor:rgb(1,122,116);
 
 //popup window size
 $popupOuterMargin: 10px;
@@ -165,7 +166,8 @@ $commonButtonGradient: linear-gradient(
   standardButtonHeight:$standardButtonHeight;
   listTableTitleTextSize:$listTableTitleTextSize;
   commonButtonGradient:$commonButtonGradient;
-  contentColor:$contentColor
+  contentColor:$contentColor;
+  standardControlBgColor:$standardControlBgColor;
 
 }
 
