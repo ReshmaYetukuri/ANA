@@ -8,9 +8,9 @@ const Div = styled.div`
   display : flex;
   flex-direction : row;
   font-weight: 700;
-  font-size: x-large;
+  font-size: ${constants.standardTextSize};
   svg {
-    height:2rem;
+    height:1.6rem;
   }
 `
 
