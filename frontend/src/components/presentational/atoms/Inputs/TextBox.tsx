@@ -10,8 +10,14 @@ type TextBoxProps = {
 };
 
 const Input = styled.input`
+  border-width: 1px;
   &:focus {
     background-color: ${constants.inputFieldFocusBgColor};
+    border-width: 1px;
+  }
+  ,
+  &:focus-visible {
+    outline: none;
   }
 `;
 export const TextBox: FC<TextBoxProps> = ({
