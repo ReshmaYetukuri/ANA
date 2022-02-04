@@ -1,17 +1,21 @@
 import { FC } from "react";
 import styled from "@emotion/styled";
-import styles from '../../../../constants/constants.module.scss'
+import constants from '../../../../constants/styleConstants.module.scss';
+
 const Link = styled.a`
-  color:rgb(0,30,135);  //linkColor
+color:${constants.linkColor}; 
 `;
 type LinkProp = {
   hrefValue: string;
   text: string;
 };
-export const ExternalLink: FC<LinkProp> =({ hrefValue , text })=> {
-  return (
+
+export const ExternalLink: FC<LinkProp> =({ hrefValue='#' , text })=> 
+  (
     <div>
       <Link href={hrefValue}>{text}</Link>
     </div>
   );
-};
+
+
+ export default ExternalLink;
