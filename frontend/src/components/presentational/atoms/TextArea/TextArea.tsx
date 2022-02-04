@@ -13,7 +13,7 @@ const TextAreaDiv = styled.textarea<TextAreaProps>`
   min-width:100px;
   resize: none;
   &:focus {
-  background-color: rgb(255, 254, 146);
+  background-color: ${constants.inputFieldFocusBgColor};
   outline: 0;
   }`;
 
