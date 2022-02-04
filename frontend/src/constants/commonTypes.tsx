@@ -8,4 +8,6 @@ export enum IconButtonTypes { // eslint-disable-line
   'cardReader',
   'webMinds',
   'usefulTools',
+  'arrowRight',
+  'arrowLeft',
 }
