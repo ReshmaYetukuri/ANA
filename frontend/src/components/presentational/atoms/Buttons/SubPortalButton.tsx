@@ -6,7 +6,7 @@ type ButtonStyledProps= {
     width?:string;
 }
 const Button=styled.button<ButtonStyledProps>`
-  color:${constants.gradientColor1};
+  color:${constants.itemTitleBgColor1};
   padding: 8px;
   background: ${constants.commonButtonGradient};
   border-width:1px;
