@@ -30,7 +30,9 @@ type ButtonProp = {
 };
 
 export const MainHeaderButton: FC<ButtonProp>=
-  ({handleClick = () => {},
+  ({handleClick = () => {
+    // handleClick function
+  },
   text = "",
   }) => 
    (
@@ -40,6 +42,10 @@ export const MainHeaderButton: FC<ButtonProp>=
       </MainHeaderButtonStyle>
     </DivStyle>
   );
-  
+  MainHeaderButton.defaultProps={
+    handleClick:()=>{
+      // handleclick default function
+    }
+  }
 
  export default MainHeaderButton;
