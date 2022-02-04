@@ -1,4 +1,4 @@
-import { Radio } from "components/presentational/atoms/Inputs/Radio"
+import { Radio } from "components/presentational/atoms/Radio/Radio"
 import { Label } from "components/presentational/atoms/Labels/Label"
 import { FC } from "react"
 
