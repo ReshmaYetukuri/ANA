@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
 import { FC} from "react";
-// import { JaAvailabilityDayofweekleftButton, JaAvailabilityDayofweekrightButton } from 'assets/svgr-components';
-// import { ArrowLeft } from "../../atoms/ArrowLeft/ArrowLeft"
-// import { ArrowRight } from "../../atoms/ArrowRight/ArrowRight"
 import IconButton from "components/presentational/atoms/Buttons/IconButton";
 import { IconButtonTypes } from "constants/commonTypes";
 import { DateBox,InputData, } from "../DateBox/DateBox";
@@ -10,6 +7,8 @@ import { DateBox,InputData, } from "../DateBox/DateBox";
 type DateSliderProps={
     dates:InputData[];
     selected: (e:InputData)=> void;
+    leftArrowClick?:React.MouseEventHandler<HTMLButtonElement>;
+    rightArrowClick?:React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const DateSliderStyled= styled.div`
@@ -19,9 +18,9 @@ svg {
   }
 `
 
-export const DateSlider:FC<DateSliderProps> = ({dates,selected}) =>(
+export const DateSlider:FC<DateSliderProps> = ({dates,selected,leftArrowClick,rightArrowClick}) =>(
     <DateSliderStyled>
-        <IconButton type={IconButtonTypes.arrowLeft} width="35px" height="52px" isFullSize />
+        <IconButton type={IconButtonTypes.arrowLeft} width="35px" height="52px" isFullSize onclick={leftArrowClick}/>
         {dates.map((date) => (
             <div key={date.id}>
                 <DateBox sliderInput={date} onClick={() => {
@@ -30,6 +29,14 @@ export const DateSlider:FC<DateSliderProps> = ({dates,selected}) =>(
             </div>
         )
         )}
-        <IconButton type={IconButtonTypes.arrowRight} width="35px" height="52px" isFullSize />
+        <IconButton type={IconButtonTypes.arrowRight} width="35px" height="52px" isFullSize onclick={rightArrowClick}/>
     </DateSliderStyled>
 )
+DateSlider.defaultProps={
+    leftArrowClick:()=>{
+        // Left Arrow Click default function
+    },
+    rightArrowClick:()=>{
+        // Right Arrow Click default function
+    },
+}
