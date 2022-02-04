@@ -9,6 +9,6 @@ type FooterLabelProps = {
   text: string;
 };
 
-export const FooterLabel = ({ text }: FooterLabelProps) => {
-  return <FOOTERLABEL>{text}</FOOTERLABEL>;
-};
+export const FooterLabel = ({ text }: FooterLabelProps) => (
+  <FOOTERLABEL>{text}</FOOTERLABEL>
+);

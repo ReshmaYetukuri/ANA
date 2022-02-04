@@ -1,26 +1,24 @@
-
-import styled from "@emotion/styled"
-
-const Label = styled.label({
-   
-    fontSize :'2 rem',
-    fontWeight :'bold',
-    fontFamily :"'NotoSans-Light'"
-    })
-
-
-type checkBoxProps ={
-    text : string
+import { FC } from "react"
+    
+type CheckBoxProps ={
+    value : string;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
+    isChecked?: boolean;
+    checkBoxFor:string;
 }
 
-//resolve eslint issue
-export const CheckBox = (props:checkBoxProps) => {
-    return (
-        <div>
-
-            <input type = 'checkbox'  value ={props.text}/>
-            <Label>{props.text}</ Label>
-        </div>
- 
-    )
+export const CheckBox:FC<CheckBoxProps> = ({value,onChange,isChecked,checkBoxFor}) => 
+    <input 
+        type='checkbox' 
+        defaultChecked={isChecked} 
+        value={value}
+        onChange={onChange}
+        id={checkBoxFor}
+          />
+CheckBox.defaultProps={
+    isChecked:false,
+    onChange:()=>{
+        // on change default function
+    },
 }
+
