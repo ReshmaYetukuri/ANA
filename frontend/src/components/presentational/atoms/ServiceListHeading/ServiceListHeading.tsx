@@ -21,12 +21,12 @@ const HeadingText = styled("h2")`
   padding-right: 2rem;
 `;
 
-type HeadingBarProps = {
+type ServiceListHeadingProps = {
   label: string;
   icon: JSX.Element;
 };
 
-const HeadingBar:FC<HeadingBarProps> = ({
+const ServiceListHeading:FC<ServiceListHeadingProps> = ({
   label,
   icon
 }) => 
@@ -40,4 +40,4 @@ const HeadingBar:FC<HeadingBarProps> = ({
   );
 
 
-export default HeadingBar;
+export default ServiceListHeading;
