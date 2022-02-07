@@ -1,9 +1,7 @@
 import React, { FC } from "react";
-import { css, jsx } from "@emotion/react";
-
+import styled from "@emotion/styled";
 import constants from '../../../../constants/styleConstants.module.scss';
 
-import styled from "@emotion/styled";
 
 type NoticeProps = {
   title: string;
