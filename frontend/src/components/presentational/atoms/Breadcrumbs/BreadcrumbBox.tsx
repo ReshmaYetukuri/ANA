@@ -1,9 +1,11 @@
 import styled from '@emotion/styled';
+import { FC } from 'react';
+import constants from '../../../../constants/styleConstants.module.scss';
 
 type BreadcrumbBoxProps = {
   name: string;
-  isActive: boolean;
-  onClick?: (MouseEvent: React.MouseEvent<HTMLAnchorElement>) => void;
+  isActive?: boolean;
+  onClick: (MouseEvent: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 
 type AProps = {
@@ -11,10 +13,9 @@ type AProps = {
 };
 
 const A = styled.a`
-  border: 1px solid rgb(3, 115, 122);
+  border: 1px solid ${constants.tableTitleColor};
   height: 30px;
   text-align: center;
-  border-color: rgb(92, 151, 156);
   padding: 0 20px 0 20px;
   text-decoration: none;
   width: 100%;
@@ -31,16 +32,16 @@ const A = styled.a`
   }
 `;
 
-export const BreadcrumbBox = ({
+export const BreadcrumbBox :FC<BreadcrumbBoxProps> = ({
   isActive,
   onClick,
   name,
-}: BreadcrumbBoxProps) => (
+}) => (
   <A activeOrNot={isActive ? 'active' : 'inactive'} onClick={onClick} href="">
     {name}
   </A>
 );
 
 BreadcrumbBox.defaultProps = {
-  onClick: false,
+  isActive: false
 };
