@@ -6,9 +6,6 @@ export const TabsContainer = styled.div`
     height: 1.7rem;
     line-height: 0.1rem;
     min-width: 4rem;
-    .nav-item {
-      margin-right: 2px;
-    }
   }
 
   .nav-link.active {
@@ -21,8 +18,8 @@ export const TabsContainer = styled.div`
     color: ${constants.standardTextColor};
     height: 1.7rem;
     width: 6rem;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     border-bottom: 1rem;
     background: ${constants.basicBgColorInputField};
   }
