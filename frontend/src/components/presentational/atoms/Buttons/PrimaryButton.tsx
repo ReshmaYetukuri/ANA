@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import constants from '../../../../constants/styleConstants.module.scss'
 
 export interface RegisterButtonProps {
-  name: string;
+  label: string;
   width?: string;
   height?: string;
   onclick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -34,13 +34,13 @@ const Button = styled.button<ButtonProps>`
 `;
 
 const PrimaryButton: FC<RegisterButtonProps> = ({
-  name,
+  label,
   width,
   height,
   onclick,
 }) => (
   <Button type="button" width={width} height={height} onClick={onclick}>
-    {name}
+    {label}
   </Button>
 );
 export default PrimaryButton
