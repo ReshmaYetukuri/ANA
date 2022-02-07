@@ -5,6 +5,7 @@ import constants from '../../../../constants/styleConstants.module.scss';
 type TextAreaProps={
   width: string;
   onChange :React.ChangeEventHandler<HTMLTextAreaElement>;
+  value:string;
   };
   
   const TextAreaDiv = styled.textarea<TextAreaProps>`
@@ -16,5 +17,5 @@ type TextAreaProps={
     outline: 0;
     }`;
   
-    export const TextArea : FC<TextAreaProps> = ( {width, onChange })=>  
-        <TextAreaDiv  width={width} onChange={onChange}  /> 
+    export const TextArea : FC<TextAreaProps> = ( {width,value, onChange })=>  
+        <TextAreaDiv  width={width} onChange={onChange} value={value}  /> 

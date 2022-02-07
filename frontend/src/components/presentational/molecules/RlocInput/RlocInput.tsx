@@ -2,14 +2,21 @@ import styled from '@emotion/styled';
 import IconButton from 'components/presentational/atoms/Buttons/IconButton';
 import { TextBox } from 'components/presentational/atoms/Inputs/TextBox';
 import { IconButtonTypes } from 'constants/commonTypes';
-import { useState } from 'react';
+import { FC, MouseEventHandler, useState } from 'react';
 
 const RlocWrapper = styled.div`
   display: flex;
   gap: 2px;
 `;
+type RlocInputProps={
+handleHistory : MouseEventHandler<HTMLButtonElement> ;
+handleCacao : MouseEventHandler<HTMLButtonElement> ;
+}
 
-export const RLOCInput = () => {
+export const RlocInput:FC<RlocInputProps> = ({
+  handleHistory,
+  handleCacao
+}) => {
   const [state, setState] = useState('');
 
   return (
@@ -21,15 +28,17 @@ export const RLOCInput = () => {
       />
       <IconButton
         type={IconButtonTypes.history}
-        isFullSize={true}
-        width={'1.5rem'}
-        height={'1.5rem'}
+        isFullSize
+        width='1.5rem'
+        height='2rem'
+        onclick={handleHistory}
       />
       <IconButton
-        width={'1.5rem'}
-        height={'1.5rem'}
+        width='1.5rem'
+        height='2rem'
         type={IconButtonTypes.cacao}
-        isFullSize={true}
+        isFullSize
+        onclick={handleCacao}
       />
     </RlocWrapper>
   );
