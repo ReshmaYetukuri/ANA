@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { FC } from 'react';
 
 export type ArrowProps = {
   color?: string;
@@ -18,13 +19,8 @@ const ArrowRightStyled = styled(CommonArrowStyles)<ArrowProps>`
   margin-left: 10px;
 `;
 
-// const Border = styled.div`
-//   border: 2px solid #c4c2c7;
-//   background: #dedde0;
-// `;
-
-export const ArrowRight = ({ onClick, color }: ArrowProps) => (
-  // <Border>
+export const ArrowRight : FC<ArrowProps> =({ onClick, color }) => (
+  
   <ArrowRightStyled color={color} onClick={onClick} />
-  // </Border>
+
 );

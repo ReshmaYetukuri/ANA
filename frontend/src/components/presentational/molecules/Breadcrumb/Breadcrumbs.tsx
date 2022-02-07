@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { ArrowRight } from '../../atoms/ArrowRight/ArrowRight';
 import { BreadcrumbBox } from '../../atoms/Breadcrumbs/BreadcrumbBox';
 
@@ -10,7 +11,7 @@ type BreadcrumbsProps = {
 
 const click = () => console.log('onclick enabled');
 
-export const Breadcrumbs = ({ pages }: BreadcrumbsProps) => (
+export const Breadcrumbs : FC<BreadcrumbsProps> =({ pages }) => (
   <>
     <div className="search breadCrumbDivFlex">
       {pages.map((page, index) => (
@@ -27,9 +28,6 @@ export const Breadcrumbs = ({ pages }: BreadcrumbsProps) => (
             <ArrowRight color="rgb(16,113,112)" />
           ) : null}
         </div>
-        // {index !== pages.length - 1 ? (
-        //     <ArrowRight color="rgb(16,113,112)" />
-        //     ) : null}
       ))}
     </div>
   </>
