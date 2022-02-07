@@ -19,13 +19,13 @@ const Link = styled("a")`
   }
 `;
 
-type ListItemProps = {
+type ServiceListContentProps = {
   link: string;
   href: string;
   onClick: (value: string) => void;
 };
 
-const ListItem:FC<ListItemProps> = ({
+const ServiceListContent:FC<ServiceListContentProps> = ({
   link,
   href,
   onClick
@@ -44,4 +44,4 @@ const ListItem:FC<ListItemProps> = ({
   );
 
 
-export default ListItem;
+export default ServiceListContent;

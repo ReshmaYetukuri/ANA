@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import HeadingBar from 'components/presentational/atoms/ListItemHeadingMeal/HeadingBar';
-import ListItem from 'components/presentational/atoms/ListItemMeal/ListItem';
 import { FC } from 'react';
+import ServiceListHeading from 'components/presentational/atoms/ServiceListHeading/ServiceListHeading';
+import ServiceListContent from 'components/presentational/atoms/ServiceListContent/ServiceListContent';
 
 
 const ScrollingArea = styled.div`
@@ -17,11 +17,11 @@ const Items = styled.div`
   display: flex;
   font-size: 0.9rem;
 `;
-const MealsWrapper = styled.div`
+const ServiceListBoxWrapper = styled.div`
   max-width: 30vw;
 `;
 
-type MealComponentProps = {
+type ServiceListBoxProps = {
   MealIconSrc: JSX.Element;
   onClick: (value: string) => void;
   Heading: string;
@@ -32,24 +32,24 @@ type MealComponentProps = {
   }[];
 };
 
-const MealComponent: FC<MealComponentProps> = ({
+const ServiceListBox: FC<ServiceListBoxProps> = ({
   MealIconSrc,
   onClick,
   Heading,
   LinkList,
 }) => (
-  <MealsWrapper>
-    <HeadingBar icon={MealIconSrc} label={Heading} />
+  <ServiceListBoxWrapper>
+    <ServiceListHeading icon={MealIconSrc} label={Heading} />
     <ScrollingArea>
       {LinkList.map((e) => 
         (
           <Items>
-            <ListItem link={e.link} href={e.href} onClick={onClick} />
+            <ServiceListContent link={e.link} href={e.href} onClick={onClick} />
           </Items>
         )
       )}
     </ScrollingArea>
-  </MealsWrapper>
+  </ServiceListBoxWrapper>
 );
 
-export default MealComponent;
+export default ServiceListBox;
