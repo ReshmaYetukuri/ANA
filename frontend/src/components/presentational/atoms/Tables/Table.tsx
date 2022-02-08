@@ -103,7 +103,7 @@ const Table = ({ tableHeading, tableData }: TableProps) => (
           <td className={`table-${tableHeading[4].replace(/[. ,:-]+/g, '-')}`}>
             {item.arr}
           </td>
-          <td className={`table-${tableHeading[5].replace(/[. ,:-]+/g, '-')}`}>
+          {/* <td className={`table-${tableHeading[5].replace(/[. ,:-]+/g, '-')}`}>
             <a
               href="void(0)"
               onClick={(e) => {
@@ -112,7 +112,7 @@ const Table = ({ tableHeading, tableData }: TableProps) => (
             >
               {item.select}
             </a>
-          </td>
+          </td> */}
         </tr>
       ))}
     </tbody>
