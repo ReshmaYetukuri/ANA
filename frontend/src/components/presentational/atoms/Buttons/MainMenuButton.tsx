@@ -3,20 +3,18 @@ import styled from '@emotion/styled';
 import constants from '../../../../constants/styleConstants.module.scss';
 
 const Button = styled.button<ButtonProps>`
-  border: solid 1px;
+  border: 1px solid ${constants.itemTitleBgColor2};
   background: ${constants.commonButtonGradient};
   padding: 0 5px;
-  min-width: 50px;
   width: ${(props) => props.width};
+  font-size: ${constants.standardSubTextsize};
+  font-weight: bold;
 `;
 const Header = styled.div`
-  float: left;
   margin-bottom: 9px;
-  width: 100%;
 `;
 const Footer = styled.div`
   color: ${constants.basicColor};
-  width: 100%;
 `;
 
 type ButtonProps = {
@@ -43,7 +41,7 @@ const MainMenuButton: FC<MainMenuButtonProps> = ({
 );
 
 MainMenuButton.defaultProps = {
-  width: '90px',
+  width: '',
 };
 
 export default MainMenuButton;

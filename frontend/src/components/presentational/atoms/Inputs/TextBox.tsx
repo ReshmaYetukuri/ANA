@@ -7,10 +7,13 @@ type TextBoxProps = {
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   value: string;
   autoFocus?: boolean;
+  width?: string;
 };
 
 const Input = styled.input`
   border-width: 1px;
+  font-size: ${constants.breadCrumbsFontSize};
+  width: ${(props) => props.width};
   &:focus {
     background-color: ${constants.inputFieldFocusBgColor};
     border-width: 1px;
@@ -25,17 +28,20 @@ export const TextBox: FC<TextBoxProps> = ({
   onChange,
   value,
   autoFocus,
+  width,
 }) => (
   <Input
     type="text"
     size={size}
     onChange={onChange}
     value={value}
+    width={width}
     autoFocus={autoFocus}
   />
 );
 
 TextBox.defaultProps = {
   autoFocus: false,
-  size: 9,
+  size: 1,
+  width: '',
 };

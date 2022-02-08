@@ -12,25 +12,16 @@ export interface RegisterButtonProps {
 type ButtonProps = {
   width?: string;
   height?: string;
-  // isFullSize: boolean;
 };
 
 const Button = styled.button<ButtonProps>`
-  font-size: 0.9rem;
+  font-size: ${constants.standardSubTextsize};
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  padding: 0rem 2.5rem 0rem 2.5rem;
-  margin: 0.3rem;
+  padding: 0rem 1rem;
   color: ${constants.contentColor};
-  background-image: linear-gradient(
-    to bottom,
-    #5295ff,
-    #458dff,
-    #3784ff,
-    #287cff,
-    #1673ff
-  );
-  border: 1px solid #8a8686; 
+  background-image: ${constants.primaryButtonGradient};
+  border: 1px solid ${constants.itemTitleBgColor2}; 
 `;
 
 const PrimaryButton: FC<RegisterButtonProps> = ({

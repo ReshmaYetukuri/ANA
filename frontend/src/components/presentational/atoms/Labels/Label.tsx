@@ -3,27 +3,29 @@ import { FC } from 'react';
 import constants from '../../../../constants/styleConstants.module.scss';
 
 export type LabelProps = {
-  label:string,
-  labelFor?:string,
-  fontColor?:string,
-  onClick?: React.MouseEventHandler<HTMLLabelElement>
-}
+  label: string;
+  labelFor?: string;
+  fontColor?: string;
+  onClick?: React.MouseEventHandler<HTMLLabelElement>;
+};
 
 type LabelStyledProps = {
-  fontColor?: string,
-}
+  fontColor?: string;
+};
 
 const LabelStyled = styled.label<LabelStyledProps>`
-  color: ${props => props.fontColor ? props.fontColor : `${constants.standardTextColor}`};
-  text-align: center;
-  margin:0 10px 0 5px;
-`
+  color: ${(props) =>
+    props.fontColor ? props.fontColor : `${constants.standardTextColor}`};
+  font-size: ${constants.breadCrumbsFontSize};
+`;
 
-export const Label:FC<LabelProps> = ({
+export const Label: FC<LabelProps> = ({
   label,
   labelFor,
   fontColor,
-  onClick
+  onClick,
 }) => (
-  <LabelStyled htmlFor={labelFor} onClick={onClick} fontColor={fontColor}>{label}</LabelStyled>
-)
+  <LabelStyled htmlFor={labelFor} onClick={onClick} fontColor={fontColor}>
+    {label}
+  </LabelStyled>
+);

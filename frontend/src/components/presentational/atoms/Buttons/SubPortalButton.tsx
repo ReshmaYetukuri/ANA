@@ -6,23 +6,25 @@ type ButtonStyledProps= {
     width?:string;
 }
 const Button=styled.button<ButtonStyledProps>`
-  color:${constants.itemTitleBgColor1};
-  padding: 8px;
-  background: ${constants.commonButtonGradient};
-  border-width:1px;
-  text-align: left;
-  font-weight: bolder;
-  min-width: 100px;
-  width :${props => props.width};
+    color:${constants.itemTitleBgColor1};
+    padding: 3px 8px;
+    background: ${constants.commonButtonGradient};
+    border-width:1px;
+    text-align: left;
+    width :${props => props.width};
+    font-size: ${constants.standardSubTextsize};
+`
+const Div=styled.div`
+    display: flex;
+    align-items: center;
+    font-family: ${constants.fontFamilyBold};
 `
 
 const Span=styled.span`
-  color: ${constants.errorColor};
-  font-size: 1.5rem;
-  font-weight: 900;
-  padding-top:6px;
-  float: left;
-  margin-right:8px;
+    color: ${constants.errorColor};
+    font-size: 1.5rem;
+    margin-right:8px;
+    line-height: 1;
 ` 
    
 type SubPortalButtonProps ={
@@ -33,14 +35,14 @@ type SubPortalButtonProps ={
 }
   
 export const SubPortalButton:FC<SubPortalButtonProps> =({name, onClick, width, isRequired})=>(
-    <div>
+    <Div>
         {isRequired && <Span> * </Span>} 
-        <Button width={width}  onClick={onClick}>{name}</Button>
-    </div>
+        <Button width={width} onClick={onClick}>{name}</Button>
+    </Div>
 )
 
 SubPortalButton.defaultProps={
-    width:'100px',
+    width:'',
     isRequired:false,
 }
 

@@ -14,14 +14,14 @@ import constants from '../../../../constants/styleConstants.module.scss';
 
 
 const Button = styled.button<ButtonProps>`
-  background:${constants.commonButtonGradient}
+  background:${constants.commonButtonGradient};
   border-width: 1px;
   border-color: ${constants.basicBgColor};
   text-align: center;
-  min-width: 2rem;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   padding: ${(props) => (props.isFullSize ? '0px' : '3px')};
+  display: flex;
   :hover {
     -webkit-box-shadow: 0px 0px 5px 2px ${constants.basicBgColor};
     border-width: 1.5px;

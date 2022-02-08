@@ -5,24 +5,24 @@ import { Label } from './Label';
 import constants from '../../../../constants/styleConstants.module.scss';
 
 const Div = styled.div`
-  display : flex;
-  flex-direction : row;
+  display: flex;
+  align-items: center;
   font-weight: 700;
   svg {
-    height:1.3rem;
+    height: 1.3rem;
   }
-`
+  label {
+    margin-left: 10px;
+  }
+`;
 
 interface SubHeadingSmallProps {
-  label:string;
+  label: string;
 }
 
-export const SubHeadingSmall:FC<SubHeadingSmallProps> = ({label}) => 
-   (
-     <Div>
-       <IconBottomTitle/>
-       <Label label={label} fontColor={constants.itemTitleBgColor1}/>
-     </Div>
-    )
-
-  
+export const SubHeadingSmall: FC<SubHeadingSmallProps> = ({ label }) => (
+  <Div>
+    <IconBottomTitle />
+    <Label label={label} fontColor={constants.itemTitleBgColor1} />
+  </Div>
+);

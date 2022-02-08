@@ -80,6 +80,9 @@ $crypticResultFontSizeHTML: 0.85rem; //17px;
 $contentConfirmationMessageFontSize: 1.05rem; //21px;
 $controlInfoTextFontSize: 0.8rem; //16px;
 $htmlBrowserDisplayFontSize: 1.6rem; //32px;
+$fontFamilyLight: 'Noto Sans JP-300';
+$fontFamilyRegular: 'Noto Sans JP-500';
+$fontFamilyBold: 'Noto Sans JP-700';
 
 //Standard Control(Form elements Size)
 $standardControlHeight: 1rem; //20px;
@@ -90,16 +93,21 @@ $listTableTitleTextSize: 0.95rem; //19px;
 //newly added colors
 $contentColor:rgb(255,255,255); //white
 
-
 //Gradient color
 $commonButtonGradient: linear-gradient(
   rgb(203, 225, 236) 10%,
   #fff 40%,
   rgb(203, 225, 236)
 );
-
-
-
+// blue gradient
+$primaryButtonGradient: linear-gradient(
+    to bottom,
+    #5295ff,
+    #458dff,
+    #3784ff,
+    #287cff,
+    #1673ff
+  );
 
 :export {
   vacantSeatSecond: $vacantSeatSecond;
@@ -168,7 +176,10 @@ $commonButtonGradient: linear-gradient(
   commonButtonGradient:$commonButtonGradient;
   contentColor:$contentColor;
   standardControlBgColor:$standardControlBgColor;
-
+  primaryButtonGradient: $primaryButtonGradient;
+  fontFamilyBold: $fontFamilyBold;
+  fontFamilyLight: $fontFamilyLight;
+  fontFamilyRegular: $fontFamilyRegular;
 }
 
 
