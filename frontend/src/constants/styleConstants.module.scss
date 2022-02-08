@@ -72,20 +72,20 @@ $popupPadding: 10px;
 $popupWindowFooterBandHeight: 50px;
 
 //Fonts
-$standardTextSize: 20px;
-$standardSubTextsize: 17px;
-$breadCrumbsFontSize: 15px;
-$crypticResultFontSize: 21px;
-$crypticResultFontSizeHTML: 17px;
-$contentConfirmationMessageFontSize: 21px;
-$controlInfoTextFontSize: 16px;
-$htmlBrowserDisplayFontSize: 32px;
+$standardTextSize: 1rem; //20px;
+$standardSubTextsize: 0.85rem;//17px;
+$breadCrumbsFontSize: 0.75rem; //15px;
+$crypticResultFontSize: 1.05rem;//21px;
+$crypticResultFontSizeHTML: 0.85rem; //17px;
+$contentConfirmationMessageFontSize: 1.05rem; //21px;
+$controlInfoTextFontSize: 0.8rem; //16px;
+$htmlBrowserDisplayFontSize: 1.6rem; //32px;
 
 //Standard Control(Form elements Size)
-$standardControlHeight: 20px;
-$standardButtonWidth: 60px;
-$standardButtonHeight: 25px;
-$listTableTitleTextSize: 19px;
+$standardControlHeight: 1rem; //20px;
+$standardButtonWidth: 3rem; //60px;
+$standardButtonHeight: 1.25rem; //25px;
+$listTableTitleTextSize: 0.95rem; //19px;
 
 //newly added colors
 $contentColor:rgb(255,255,255); //white

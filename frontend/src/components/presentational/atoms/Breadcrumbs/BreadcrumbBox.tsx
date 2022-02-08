@@ -5,30 +5,28 @@ import constants from '../../../../constants/styleConstants.module.scss';
 type BreadcrumbBoxProps = {
   name: string;
   isActive?: boolean;
-  onClick: (MouseEvent: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClick?: (MouseEvent: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 
 type AProps = {
-  activeOrNot?: 'active' | 'inactive';
+  activeOrNot?: boolean;
 };
 
 const A = styled.a`
   border: 1px solid ${constants.tableTitleColor};
-  height: 30px;
   text-align: center;
-  padding: 0 20px 0 20px;
+  padding: 0 20px 2px 20px;
   text-decoration: none;
   width: 100%;
   margin-left: 20px;
-  font-size: 15px;
-  line-height: 1.6rem;
+  font-size: ${constants.breadCrumbsFontSize};
   background-color: ${(props: AProps) =>
-    props.activeOrNot === 'active' ? 'rgb(16,113,112)' : 'white'};
+    props.activeOrNot ? constants.tableTitleColor : constants.basicBgColorInputField};
   color: ${(props: AProps) =>
-    props.activeOrNot === 'active' ? 'white' : 'rgb(75, 138, 117)'};
+    props.activeOrNot ? constants.basicBgColorInputField : constants.tableTitleColor};
   :hover {
     color: ${(props: AProps) =>
-      props.activeOrNot === 'active' ? 'white' : 'rgb(75, 138, 117)'};
+      props.activeOrNot ? constants.basicBgColorInputField : constants.tableTitleColor};
   }
 `;
 
@@ -37,11 +35,14 @@ export const BreadcrumbBox :FC<BreadcrumbBoxProps> = ({
   onClick,
   name,
 }) => (
-  <A activeOrNot={isActive ? 'active' : 'inactive'} onClick={onClick} href="">
+  <A activeOrNot={isActive} onClick={onClick} href="#">
     {name}
   </A>
 );
 
 BreadcrumbBox.defaultProps = {
-  isActive: false
+  isActive: false,
+  onClick: () => {
+    //
+  }
 };

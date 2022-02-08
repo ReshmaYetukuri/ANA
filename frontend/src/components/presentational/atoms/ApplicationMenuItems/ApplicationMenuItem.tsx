@@ -11,7 +11,7 @@ const Item = styled(DropdownItem)`
     padding: 0.2rem 0.25rem;
     display:flex;
     align-items:center;
-    font-size: 0.9rem;
+    font-size: ${constants.breadCrumbsFontSize};
   }
   &.dropdown-item:active {
     color: ${constants.dimmedTextColor}; 

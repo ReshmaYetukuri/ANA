@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { Dropdown } from 'react-bootstrap';
 
@@ -25,23 +25,16 @@ interface Menu {
 type ApplicationMenuProps = {
   menuList: Menu[];
   label: string;
+  onMenuItemClick?: (e: string) => void
 };
 
 const ApplicationMenu: React.FC<ApplicationMenuProps> = ({
   menuList,
   label,
-}) => {
-  const [selectedMenu, setSelectedMenu] = useState('');
-
-  const handleIt = (key: string) => {
-    setSelectedMenu(key);
-  };
-
-  useEffect(() => {
-    console.log(selectedMenu);
-  }, [selectedMenu]);
-
-  return (
+  onMenuItemClick = () => {
+    //
+  }
+}) => (
     <Dropdown>
       <ApplicationMenuButton label={label} />
       <MenuListDiv>
@@ -50,12 +43,17 @@ const ApplicationMenu: React.FC<ApplicationMenuProps> = ({
             label={menu.name}
             key={menu.key}
             eventKey={menu.key}
-            onClick={handleIt}
+            onClick={onMenuItemClick}
           />
         ))}
       </MenuListDiv>
     </Dropdown>
   );
-};
 
 export default ApplicationMenu;
+
+ApplicationMenu.defaultProps = {
+  onMenuItemClick: () => {
+    //
+  }
+}

@@ -7,7 +7,7 @@ import constants from '../../../../constants/styleConstants.module.scss';
 const Toggle = styled(DropdownToggle)`
   background: ${constants.basicBgColor};
   font-weight: bold;
-  font-size: 14px;
+  font-size: ${constants.breadCrumbsFontSize};
   padding: 0.2rem 0.25rem;
 
   &.btn-primary {

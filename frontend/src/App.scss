@@ -1,6 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 @import '_typography';
-
+html {
+  font-size: 20px;
+}
 .breadCrumbDivFlex {
   position: relative;
   top: 20px;
