@@ -6,23 +6,9 @@ import constants from '../../../../constants/styleConstants.module.scss';
 
 const Toggle = styled(DropdownToggle)`
   background: ${constants.basicBgColor};
-  height: 25px;
-  font-family: 'NotoSans-Light';
   font-weight: bold;
-  font-size: ${constants.breadCrumbsFontSize};
-
-  &.btn {
-    padding: 5px;
-  }
-
-  &:hover {
-    background-color: ${constants.basicBgColor};
-    color: black;
-  }
-  &.dropdown-toggle.btn:focus {
-    background-color: ${constants.popupWindowStanadardBgColor};
-    box-shadow: none;
-  }
+  font-size: 14px;
+  padding: 0.2rem 0.25rem;
 
   &.btn-primary {
     border-color: ${constants.basicBgColor};
@@ -35,6 +21,14 @@ const Toggle = styled(DropdownToggle)`
     align-items: center;
     border-color: ${constants.popupWindowStanadardBgColor};
     background-color: ${constants.basicBgColor};
+  }
+
+  &.btn:hover {
+    background-color: ${constants.popupWindowStanadardBgColor};
+  }
+  &.dropdown-toggle.btn:focus {
+    background-color: ${constants.popupWindowStanadardBgColor};
+    box-shadow: none;
   }
 
   &.dropdown-toggle::after {

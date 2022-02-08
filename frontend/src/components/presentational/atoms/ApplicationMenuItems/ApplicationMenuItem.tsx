@@ -6,13 +6,12 @@ import constants from "../../../../constants/styleConstants.module.scss";
 const Item = styled(DropdownItem)`
   &.dropdown-item {
     font-weight: bold;
-    height: 25px;
-    border-right: 0.7px solid ${constants.popupWindowStanadardBgColor};
-    border-left: 0.7px solid ${constants.popupWindowStanadardBgColor};
-    border-bottom: 0.7px solid ${constants.popupWindowStanadardBgColor};
-    padding: 0.25rem 0.25rem;
+    border: 0.7px solid ${constants.popupWindowStanadardBgColor};
+    border-top: 0;
+    padding: 0.2rem 0.25rem;
     display:flex;
     align-items:center;
+    font-size: 0.9rem;
   }
   &.dropdown-item:active {
     color: ${constants.dimmedTextColor}; 
