@@ -4,14 +4,11 @@ import { FC } from 'react';
 import constants from '../../../../constants/styleConstants.module.scss';
 
 export const TabsWrapper = styled.div`
-  width: 75%;
-  padding-top: 0.6rem;
-  padding-left: 0.5rem;
   .nav-link {
     line-height: 1rem;
     background-color: ${constants.basicBgColor};
     border-radius: 0;
-    min-width: 7rem;
+    min-width: 5rem;
     height: 2rem;
     color: ${constants.standardTextColor};
     box-shadow: 0px 0px 1px;
@@ -35,7 +32,7 @@ export const TabsWrapper = styled.div`
     border-bottom: 1px solid ${constants.PAXorSEGAddedBgColor2};
     padding: 10px;
     -webkit-box-shadow: inset 0 0em 0.3em 0em ${constants.PAXorSEGAddedBgColor2};
-    height: 480px;
+    font-size: ${constants.breadCrumbsFontSize};
   }
 
   .nav-tabs {
@@ -46,6 +43,7 @@ export const TabsWrapper = styled.div`
 export type TabViewProps = {
   onSelect?: () => void;
   defaultActiveKey?: string | number;
+
   tabList: {
     eventKey: string;
     title: JSX.Element | string;

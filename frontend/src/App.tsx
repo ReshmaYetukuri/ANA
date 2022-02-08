@@ -1,5 +1,5 @@
 import 'App.scss';
-import Notice from 'components/presentational/atoms/Notice/Notice';
+import { TabsView } from 'components/presentational/atoms/TabView/TabsView';
 // import { useState } from 'react';
 
 export const App = () => (
@@ -9,10 +9,30 @@ export const App = () => (
   //   return
   <>
     <div style={{ width: 350, margin: 20 }}>
-      <Notice
-        title="Notice"
-        content="jkdnksjn<br /> sakdhisadsadbsad"
-        height="150px"
+      <TabsView
+        defaultActiveKey="string2"
+        tabList={[
+          {
+            eventKey: 'string',
+            title: 'title1',
+            component: <div>Tab1 content</div>,
+          },
+          {
+            eventKey: 'string1',
+            title: 'title2',
+            component: <div>Tab2 content</div>,
+          },
+          {
+            eventKey: 'string2',
+            title: 'title3',
+            component: <div>Tab3 content</div>,
+          },
+          {
+            eventKey: 'string3',
+            title: 'title4',
+            component: <div>Tab4 content</div>,
+          },
+        ]}
       />
       {/* <AmcNoInput handleCacao={()=>{alert('cacao')}} handleCardReader={()=>{alert('cacao1')}} handleWebMines={()=>{alert('cacao2')}} /> */}
     </div>
