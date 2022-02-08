@@ -11,28 +11,24 @@ const MainDiv = styled.div`
   svg {
     height:1.4rem
   }
+  label {
+    cursor:pointer;
+  }
 `;
-
-enum IconButtonTypes { // eslint-disable-line
-
-  'help',
-}
-
 export interface ExternalLinkWithInfoIconProps {
-  src: string;
-  alt:string;
-  name:string;
+  label:string;
   link:string;
+  
 };
-const ExternalLinkWithInfoIcon:FC<ExternalLinkWithInfoIconProps> = ({name,link}) =>  (
+const ExternalLinkWithInfoIcon:FC<ExternalLinkWithInfoIconProps> = ({label,link}) =>  (
     <MainDiv>
      <div> 
       <SvgIcnHelp3030 />
      </div>
       <a href={link}>
-        <Label label={name}/>
+        <Label label={label}/>
       </a>
     </MainDiv>
   )
 
-export default ExternalLinkWithInfoIcon;
+export default ExternalLinkWithInfoIcon; 
