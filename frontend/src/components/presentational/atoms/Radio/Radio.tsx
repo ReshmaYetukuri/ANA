@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
+import constants from '../../../../constants/styleConstants.module.scss';
 
 const CheckBoxStyled=styled.div`
   .radio{
@@ -11,13 +12,13 @@ const CheckBoxStyled=styled.div`
     height: 13px;
     padding: 1px; 
     background-clip: content-box;
-    border: .5px solid gray;
-    background-color: white;
+    border: .5px solid ${constants.itemTitleBgColor2};
+    background-color: ${constants.basicBgColorInputField};
     border-radius: 50%;
 }
 
   .radio:checked{
-    background-color: black;
+    background-color: ${constants.standardTextColor};
 }
 `
 
