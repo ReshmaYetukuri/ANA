@@ -29,13 +29,13 @@ export const RlocInput:FC<RlocInputProps> = ({
       <IconButton
         type={IconButtonTypes.history}
         isFullSize
-        width='2rem'
-        height='1.5rem'
+        width='1.5rem'
+        height='2rem'
         onclick={handleHistory}
       />
       <IconButton
-        width='2rem'
-        height='1.5rem'
+        width='1.5rem'
+        height='2rem'
         type={IconButtonTypes.cacao}
         isFullSize
         onclick={handleCacao}

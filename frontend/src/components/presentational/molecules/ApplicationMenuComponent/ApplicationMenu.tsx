@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { Dropdown } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
 import { ApplicationMenuButton } from 'components/presentational/atoms/ApplicationMenuButton/ApplicationMenuButton';
 import { ApplicationMenuItem } from 'components/presentational/atoms/ApplicationMenuItems/ApplicationMenuItem';
-import { Menu } from './Menu';
 import constants from "../../../../constants/styleConstants.module.scss";
 
 const MenuListDiv = styled(DropdownMenu)`
@@ -14,48 +12,48 @@ const MenuListDiv = styled(DropdownMenu)`
     padding: 0;
     color: black;
     background-color: ${constants.basicBgColor};
-    font-family: 'NotoSans-Light';
-    font-weight: bold;
-    font-size: smaller;
     min-width: 6rem;
     border-top: 1px solid ${constants.popupWindowStanadardBgColor}3;
   }
 `;
 
+interface Menu {
+  key: string,
+  name:string
+}
+
 type ApplicationMenuProps = {
-  MenuList: Menu[];
+  menuList: Menu[];
   label: string;
+  onMenuItemClick?: (e: string) => void
 };
 
 const ApplicationMenu: React.FC<ApplicationMenuProps> = ({
-  MenuList,
+  menuList,
   label,
-}) => {
-  const [selectedMenu, setSelectedMenu] = useState('');
-
-  const handleIt = (key: string) => {
-    setSelectedMenu(key);
-  };
-
-  useEffect(() => {
-    console.log(selectedMenu);
-  }, [selectedMenu]);
-
-  return (
+  onMenuItemClick = () => {
+    //
+  }
+}) => (
     <Dropdown>
       <ApplicationMenuButton label={label} />
       <MenuListDiv>
-        {MenuList.map((menu) => (
+        {menuList.map((menu) => (
           <ApplicationMenuItem
             label={menu.name}
             key={menu.key}
             eventKey={menu.key}
-            onClick={handleIt}
+            onClick={onMenuItemClick}
           />
         ))}
       </MenuListDiv>
     </Dropdown>
   );
-};
 
 export default ApplicationMenu;
+
+ApplicationMenu.defaultProps = {
+  onMenuItemClick: () => {
+    //
+  }
+}

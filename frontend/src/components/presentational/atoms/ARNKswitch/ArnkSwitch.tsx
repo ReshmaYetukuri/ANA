@@ -1,31 +1,39 @@
 import styled from '@emotion/styled';
 import SvgActiveCarPlane from 'assets/svgr-components/ActiveCarPlane';
 import SvgActivePlainCar02 from 'assets/svgr-components/ActivePlainCar02';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
 
 type ARNKSwitchProps = {
-  onClick: (state: boolean) => void;
+  onClick: (stateVar: boolean) => void;
+  isARNK?: boolean
 };
 
 const Button = styled.button`
-  width: 4.3rem;
-  height: 2rem;
+  width: 3.5rem;
   border: none;
+  display: flex;
+  padding: 5px;
+  align-items: center;
 `;
 
 export const ARNKSwitch: React.FC<ARNKSwitchProps> = ({
   onClick,
-  
+  isARNK = false
 }) => {
-  const [state, setState] = useState(true);
+  const [state, setState] = useState(false);
 
-  const changeOption = (state: boolean) => {
-    if (state === false) {
+  const changeOption = (stateVar:boolean) => {
+    if (stateVar === false) {
       setState(true);
     } else {
       setState(false);
     }
   };
+
+  useEffect(()=>{
+    setState(isARNK);
+  },[isARNK])
   const iconName = state ? <SvgActiveCarPlane /> : <SvgActivePlainCar02 />;
 
   return (

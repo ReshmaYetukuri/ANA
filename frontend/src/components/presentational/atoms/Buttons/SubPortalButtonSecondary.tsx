@@ -3,17 +3,15 @@ import styled from '@emotion/styled';
 import constants from '../../../../constants/styleConstants.module.scss'
 
 export interface SubPortalButtonSecondaryProps {
-    name:string;
+    label:string;
     width?: string;
     height?: string;
-    // isFullSize: boolean;
     onclick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 type ButtonProps = {
   width?: string;
   height?: string;
-  // isFullSize: boolean;
 };
 
 const Button = styled.button<ButtonProps>`
@@ -22,11 +20,12 @@ const Button = styled.button<ButtonProps>`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   border:1px solid ${constants.itemTitleBgColor1}
+  padding:0px;
 `;
 
 
-const SubPortalButtonSecondary:FC<SubPortalButtonSecondaryProps> = ({name,width,height,onclick,}) => <Button  width={width}
-height={height}  type="button" className={`button-${name}`} onClick={onclick}>{name}</Button>
+const SubPortalButtonSecondary:FC<SubPortalButtonSecondaryProps> = ({label,width,height,onclick,}) => <Button  width={width}
+height={height}  type="button" onClick={onclick}>{label}</Button>
 
 export default SubPortalButtonSecondary
   

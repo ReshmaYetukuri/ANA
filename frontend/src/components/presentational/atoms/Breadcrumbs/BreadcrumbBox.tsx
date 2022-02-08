@@ -1,46 +1,48 @@
 import styled from '@emotion/styled';
+import { FC } from 'react';
+import constants from '../../../../constants/styleConstants.module.scss';
 
 type BreadcrumbBoxProps = {
   name: string;
-  isActive: boolean;
+  isActive?: boolean;
   onClick?: (MouseEvent: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 
 type AProps = {
-  activeOrNot?: 'active' | 'inactive';
+  activeOrNot?: boolean;
 };
 
 const A = styled.a`
-  border: 1px solid rgb(3, 115, 122);
-  height: 30px;
+  border: 1px solid ${constants.tableTitleColor};
   text-align: center;
-  border-color: rgb(92, 151, 156);
-  padding: 0 20px 0 20px;
+  padding: 0 20px 2px 20px;
   text-decoration: none;
   width: 100%;
   margin-left: 20px;
-  font-size: 15px;
-  line-height: 1.6rem;
+  font-size: ${constants.breadCrumbsFontSize};
   background-color: ${(props: AProps) =>
-    props.activeOrNot === 'active' ? 'rgb(16,113,112)' : 'white'};
+    props.activeOrNot ? constants.tableTitleColor : constants.basicBgColorInputField};
   color: ${(props: AProps) =>
-    props.activeOrNot === 'active' ? 'white' : 'rgb(75, 138, 117)'};
+    props.activeOrNot ? constants.basicBgColorInputField : constants.tableTitleColor};
   :hover {
     color: ${(props: AProps) =>
-      props.activeOrNot === 'active' ? 'white' : 'rgb(75, 138, 117)'};
+      props.activeOrNot ? constants.basicBgColorInputField : constants.tableTitleColor};
   }
 `;
 
-export const BreadcrumbBox = ({
+export const BreadcrumbBox :FC<BreadcrumbBoxProps> = ({
   isActive,
   onClick,
   name,
-}: BreadcrumbBoxProps) => (
-  <A activeOrNot={isActive ? 'active' : 'inactive'} onClick={onClick} href="">
+}) => (
+  <A activeOrNot={isActive} onClick={onClick} href="#">
     {name}
   </A>
 );
 
 BreadcrumbBox.defaultProps = {
-  onClick: false,
+  isActive: false,
+  onClick: () => {
+    //
+  }
 };
