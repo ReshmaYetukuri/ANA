@@ -4,8 +4,6 @@ import constants from '../../../../constants/styleConstants.module.scss';
 
 const CheckBoxStyled=styled.div`
   .radio{
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     display: inline-block;
     width: 13px;

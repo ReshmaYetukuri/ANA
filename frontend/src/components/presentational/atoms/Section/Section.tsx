@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
 import { IcnDeskNoffp, IconDSeatBlue, ListAdd } from 'assets/svgr-components';
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 import constants from '../../../../constants/styleConstants.module.scss';
+import LinkLabel from '../Labels/LinkLabel';
 
 export interface flexProps {
   flexValue: number | undefined;
   backGroundColor: string | undefined;
   color: string | undefined;
+  alignBottom: boolean;
 }
 
 const SectionDiv = styled.div<flexProps>`
@@ -14,20 +16,20 @@ const SectionDiv = styled.div<flexProps>`
   display: flex;
   flex-direction: column;
   font-size: 0.7rem;
+  justify-content: ${(props) => (props.alignBottom ? 'flex-end' : '')};
+  align-items: ${(props) => (props.alignBottom ? 'center' : '')};
   color: ${(props) => (props.color ? props.color : constants.vacantSeatMain)};
   flex: ${(props) => (props.flexValue ? props.flexValue : 1)};
   background-color: ${(props) =>
     props.backGroundColor
       ? props.backGroundColor
       : constants.htmlBrowserDisplayBgColor1};
-  border-right: 1px solid #cbbcbc;
+  border-right: 1px solid ${constants.itemTitleBgColor2};
   padding: 0.2rem;
   div {
     border-right: 0px;
   }
 `;
-
-const LinkElement = styled.a``;
 
 /* content will be text , cion, link  */
 export interface SectionProps {
@@ -39,6 +41,8 @@ export interface SectionProps {
   flexValue?: number;
   backGroundColor?: string;
   color?: string;
+  alignBottom?: boolean;
+  flightNumberClick?: MouseEventHandler;
 }
 
 const Section: FC<SectionProps> = ({
@@ -50,26 +54,30 @@ const Section: FC<SectionProps> = ({
   flexValue,
   backGroundColor,
   color,
+  flightNumberClick,
+  alignBottom = false,
 }) => (
   <SectionDiv
     color={color}
     backGroundColor={backGroundColor}
     flexValue={flexValue}
+    alignBottom={alignBottom}
   >
     {type === 'Text' &&
       content !== null &&
       content &&
-      content.map((v) => (
+      content.map((v, index) => (
         <SectionDiv
           color={color}
           backGroundColor={backGroundColor}
           flexValue={flexValue}
-          key="v"
+          key={v + index.toString()}
+          alignBottom={alignBottom}
         >
           {v}
         </SectionDiv>
       ))}
-    {type === 'Text&Icon' &&
+    {type === 'TextAndIcon' &&
       iconType === 'Plus' &&
       content !== null &&
       content && (
@@ -78,7 +86,7 @@ const Section: FC<SectionProps> = ({
             color={color}
             backGroundColor={backGroundColor}
             flexValue={flexValue}
-            key="v"
+            alignBottom={alignBottom}
           >
             {content[0]}
           </SectionDiv>
@@ -86,9 +94,11 @@ const Section: FC<SectionProps> = ({
         </>
       )}
     {type === 'Icon' && iconType === 'Seat' && <IconDSeatBlue />}
-    {type === 'Icon' && iconType === 'NoFFP' && <IcnDeskNoffp />}
+    {type === 'Icon' && iconType === 'NoFFP' && (
+      <IcnDeskNoffp height="27px" width="27px" />
+    )}
     {type === 'Link' && linkUrl && linkName && (
-      <LinkElement href={linkUrl}>{linkName}</LinkElement>
+      <LinkLabel label={linkName} onClick={flightNumberClick} />
     )}
   </SectionDiv>
 );

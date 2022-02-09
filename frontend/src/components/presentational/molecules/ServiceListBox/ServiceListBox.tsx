@@ -2,30 +2,30 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 import ServiceListHeading from 'components/presentational/atoms/ServiceListHeading/ServiceListHeading';
 import ServiceListContent from 'components/presentational/atoms/ServiceListContent/ServiceListContent';
-
+import constants from '../../../../constants/styleConstants.module.scss';
 
 const ScrollingArea = styled.div`
   height: 6rem;
   overflow-y: scroll;
   scrollbar-width: thin;
-  border: 1px solid green;
+  border: 1px solid ${constants.itemTitleBgColor2};
 `;
 const Items = styled.div`
   padding: 6px 0;
-  margin-left: 3rem;
-  margin-right: 2rem;
+  width: 80%;
+  margin: 0 auto;
   display: flex;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 `;
 const ServiceListBoxWrapper = styled.div`
-  max-width: 30vw;
+  // max-width: 20rem;
 `;
 
 type ServiceListBoxProps = {
-  MealIconSrc: JSX.Element;
+  iconSrc: JSX.Element;
   onClick: (value: string) => void;
-  Heading: string;
-  LinkList: {
+  heading: string;
+  linkList: {
     key: number;
     link: string;
     href: string;
@@ -33,21 +33,19 @@ type ServiceListBoxProps = {
 };
 
 const ServiceListBox: FC<ServiceListBoxProps> = ({
-  MealIconSrc,
+  iconSrc,
   onClick,
-  Heading,
-  LinkList,
+  heading,
+  linkList,
 }) => (
   <ServiceListBoxWrapper>
-    <ServiceListHeading icon={MealIconSrc} label={Heading} />
+    <ServiceListHeading icon={iconSrc} label={heading} />
     <ScrollingArea>
-      {LinkList.map((e) => 
-        (
-          <Items>
-            <ServiceListContent link={e.link} href={e.href} onClick={onClick} />
-          </Items>
-        )
-      )}
+      {linkList.map((e) => (
+        <Items>
+          <ServiceListContent link={e.link} href={e.href} onClick={onClick} />
+        </Items>
+      ))}
     </ScrollingArea>
   </ServiceListBoxWrapper>
 );
