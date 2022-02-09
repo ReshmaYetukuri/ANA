@@ -4,7 +4,7 @@ import constants from '../../../../constants/styleConstants.module.scss';
 
 const Link = styled.a`
   color: ${constants.linkColor};
-  font-size: ${constants.breadCrumbsFontSize};
+  font-size: ${constants.standardSubTextsize};
 `;
 type LinkProp = {
   hrefValue: string;

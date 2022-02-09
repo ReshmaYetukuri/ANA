@@ -22,7 +22,7 @@ const CheckBoxStyled = styled.div<CheckBoxStyledProps>`
 
   .check:before {
     border: ${(props) =>
-      props.border ? `.5px solid ${constants.dimmedTextColor}` : 'none'};
+      props.border ? `.5px solid ${constants.itemTitleBgColor2}` : 'none'};
     display: inline-block;
     font: 13px/1em sans-serif;
     height: 13px;

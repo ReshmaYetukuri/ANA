@@ -1,49 +1,52 @@
 import styled from '@emotion/styled';
 import { Label } from 'components/presentational/atoms/Labels/Label';
 import { FC } from 'react';
+import constants from '../../../../constants/styleConstants.module.scss';
 
-export type DateBoxProps={
-    sliderInput : InputData;
-    onClick: React.MouseEventHandler<HTMLDivElement>;    
-}
+export type DateBoxProps = {
+  sliderInput: InputData;
+  onClick: React.MouseEventHandler<HTMLDivElement>;
+};
 export type InputData = {
-    dateLabel:string;
-    dayLabel:string;
-    id :string;
-    isActive?:boolean;
-}
+  dateLabel: string;
+  dayLabel: string;
+  id: string;
+  isActive?: boolean;
+};
 
 type ColorProps = {
-    active?: boolean;
-    fontColor?:string;
-}
+  active?: boolean;
+  fontColor?: string;
+};
 
-const CommonStyles= styled.div`
-    padding:0 7px; 
-    display:flex;
-    flex-direction:column;
-`
+const CommonStyles = styled.div`
+  padding: 0 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+`;
 
 const DateBoxStyled = styled(CommonStyles)`
-${(props:ColorProps) => 
-props.active ? {
-    background: "#304f8f",
-    border: "2px solid #304f8f",
-    label:{
-        color: 'white'
-    }
-} :
- {
-    border: "2px solid #2c8090",
-    label:{
-        color: 'black'
-    }
-}
-}`
+  ${(props: ColorProps) =>
+    props.active
+      ? {
+          background: `${constants.htmlBrowserDisplayBgColor5}`,
+          border: `2px solid ${constants.htmlBrowserDisplayBgColor5}`,
+          label: {
+            color: constants.basicBgColorInputField,
+          },
+        }
+      : {
+          border: `2px solid ${constants.basicColor}`,
+          label: {
+            color: constants.standardTextColor,
+          },
+        }}
+`;
 
-export const DateBox:FC<DateBoxProps> = ({sliderInput,onClick}) => (
-    <DateBoxStyled active={sliderInput.isActive} onClick={onClick}>
-        <Label label={sliderInput.dateLabel}  />
-        <Label label={sliderInput.dayLabel}  />
-    </DateBoxStyled>
-)
+export const DateBox: FC<DateBoxProps> = ({ sliderInput, onClick }) => (
+  <DateBoxStyled active={sliderInput.isActive} onClick={onClick}>
+    <Label label={sliderInput.dateLabel} />
+    <Label label={sliderInput.dayLabel} />
+  </DateBoxStyled>
+);

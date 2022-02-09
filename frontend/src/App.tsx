@@ -1,40 +1,43 @@
 import 'App.scss';
-import { TabsView } from 'components/presentational/atoms/TabView/TabsView';
+import RouteDisplayCard from 'components/presentational/molecules/RouteDisplayComponents/RouteDisplayCard/RouteDisplayCard';
 // import { useState } from 'react';
+const data = {
+  heading: {
+    data1: 'S2',
 
+    data2: 'NH837',
+  },
+
+  date: {
+    date: '30DEC',
+
+    day: 'THU',
+  },
+
+  codes: {
+    code1: 'C(J)',
+
+    code2: 'HK8',
+  },
+
+  time: {
+    timeCode1: 'HND',
+
+    time1: '10:15',
+
+    timeCode2: 'DEL',
+
+    time2: '17:05',
+  },
+};
 export const App = () => (
   // {
-  //   // const [state, setState] = useState('');
+  //   const [state, setState] = useState('');
 
-  //   return
+  //   return (
   <>
     <div style={{ width: 350, margin: 20 }}>
-      <TabsView
-        defaultActiveKey="string2"
-        tabList={[
-          {
-            eventKey: 'string',
-            title: 'title1',
-            component: <div>Tab1 content</div>,
-          },
-          {
-            eventKey: 'string1',
-            title: 'title2',
-            component: <div>Tab2 content</div>,
-          },
-          {
-            eventKey: 'string2',
-            title: 'title3',
-            component: <div>Tab3 content</div>,
-          },
-          {
-            eventKey: 'string3',
-            title: 'title4',
-            component: <div>Tab4 content</div>,
-          },
-        ]}
-      />
-      {/* <AmcNoInput handleCacao={()=>{alert('cacao')}} handleCardReader={()=>{alert('cacao1')}} handleWebMines={()=>{alert('cacao2')}} /> */}
+      <RouteDisplayCard routeDisplayData={data} isCloseButton />
     </div>
   </>
 );

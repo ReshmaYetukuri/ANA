@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
-import constants from "../../../../constants/styleConstants.module.scss";
+import constants from '../../../../constants/styleConstants.module.scss';
 
 export type ArrowProps = {
   color?: string;
@@ -15,12 +15,11 @@ const CommonArrowStyles = styled.div`
 `;
 
 const ArrowRightStyled = styled(CommonArrowStyles)<ArrowProps>`
-  border-left: 12px solid ${(props) => (props.color ? props.color : constants.$standardTextColor)};
-  margin-left: 10px;
+  border-left: 12px solid
+    ${(props) => (props.color ? props.color : constants.$standardTextColor)};
+  margin: 0 10px;
 `;
 
-export const ArrowRight : FC<ArrowProps> =({ onClick, color }) => (
-  
+export const ArrowRight: FC<ArrowProps> = ({ onClick, color }) => (
   <ArrowRightStyled color={color} onClick={onClick} />
-
 );

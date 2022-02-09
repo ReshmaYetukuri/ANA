@@ -15,8 +15,6 @@ type FlightNumberInputProps = {
 
 const MainDiv = styled.div`
   display: flex;
-  flex-direction: row;
-  padding-top: 0.7rem;
 `;
 
 export const FlightNumberInput: FC<FlightNumberInputProps> = ({
@@ -35,8 +33,8 @@ export const FlightNumberInput: FC<FlightNumberInputProps> = ({
     />
     <IconButton
       type={IconButtonTypes.search}
-      width="32px"
-      height="32px"
+      width="27px"
+      height="27px"
       isFullSize
     />
     <TextBox
