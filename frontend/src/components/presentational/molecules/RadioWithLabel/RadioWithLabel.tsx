@@ -16,7 +16,7 @@ type RadioWithLabelProps = {
   value: string;
   isSelected?: boolean;
   radioButtonChange?: React.ChangeEventHandler<HTMLInputElement>;
-  radioFor?: string;
+  radioFor: string;
   label: string;
   fontColor?: string;
   onClick?: React.MouseEventHandler<HTMLLabelElement>;
@@ -58,5 +58,4 @@ RadioWithLabel.defaultProps = {
   onClick: () => {
     // on click default function
   },
-  radioFor:''
 };

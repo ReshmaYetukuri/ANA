@@ -7,7 +7,7 @@ type CheckBoxWithLabelProps = {
   value: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   isChecked?: boolean;
-  checkBoxFor?: string;
+  checkBoxFor: string;
   label: string;
   fontColor?: string;
   onClick?: React.MouseEventHandler<HTMLLabelElement>;
@@ -61,5 +61,4 @@ CheckBoxWithLabel.defaultProps = {
   },
   background: true,
   border: true,
-  checkBoxFor:''
 };
