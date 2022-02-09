@@ -1,15 +1,20 @@
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 import styled from '@emotion/styled';
 import constants from '../../../../constants/styleConstants.module.scss';
 
-const LinkLabelStyle = styled.label`
-  font-size: ${constants.breadCrumbsFontSize};
+const LinkLabelStyle = styled.div`
+  color: ${constants.linkColor};
+  font-size: ${constants.standardSubTextsize};
+  text-decoration: underline;
+  cursor: pointer;
 `;
 
 export interface LinkelementProps {
-  name: string;
+  label: string;
+  onClick?: MouseEventHandler;
 }
-const LinkLabel: FC<LinkelementProps> = ({ name }) => (
-  <LinkLabelStyle>{name}</LinkLabelStyle>
+const LinkLabel: FC<LinkelementProps> = ({ label, onClick }) => (
+  <LinkLabelStyle onClick={onClick}>{label}</LinkLabelStyle>
 );
+
 export default LinkLabel;
