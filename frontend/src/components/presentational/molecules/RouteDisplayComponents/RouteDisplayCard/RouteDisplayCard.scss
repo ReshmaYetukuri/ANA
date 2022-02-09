@@ -63,8 +63,11 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 3px;
-    padding: 0 5px;
+    padding: 2px 5px;
     max-height: 24px;
+    .check-box {
+      display: flex;
+    }
     input:checked {
       color: $contentColor;
     }
