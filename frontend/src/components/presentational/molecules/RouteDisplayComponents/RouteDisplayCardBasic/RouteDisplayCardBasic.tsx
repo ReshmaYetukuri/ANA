@@ -13,12 +13,13 @@ const RouteDisplayCardBasic: React.FC<RouteDisplayCardProps> = ({
     <div className="route-display-close-header-container">
       <div className="route-display-close-header-wrapper">
         <div className="header-text">
-          {routeDisplayData.heading.data1} {routeDisplayData.heading.data2}
+          <span className="mx-2">{routeDisplayData.heading.data1}</span>
+          <span>{routeDisplayData.heading.data2}</span>
         </div>
       </div>
     </div>
     <div className="route-display-content">
-      <div className="column-a"/>
+      <div className="column-a" />
       <div className="column-b">
         <div className="left-top">
           <div className="date">{routeDisplayData.date.date}</div>

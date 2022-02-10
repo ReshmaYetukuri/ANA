@@ -1,34 +1,37 @@
 import { FC } from 'react';
-import styled from "@emotion/styled";
-import  {Label}  from "components/presentational/atoms/Labels/Label";
+import styled from '@emotion/styled';
 import SvgIcnHelp3030 from 'assets/svgr-components/IcnHelp3030';
+import ExternalLink from 'components/presentational/atoms/ExternalLink/ExternalLink';
 
 const MainDiv = styled.div`
   display: flex;
   flex-direction: row;
   padding-left: 8px;
   padding-top: 5px;
+  div {
+    display: flex;
+    align-self: flex-end;
+  }
   svg {
-    height:1.4rem
+    height: 0.9rem;
   }
   label {
-    cursor:pointer;
+    cursor: pointer;
+    font-size: ;
   }
 `;
 export interface ExternalLinkWithInfoIconProps {
-  label:string;
-  link:string;
-  
-};
-const ExternalLinkWithInfoIcon:FC<ExternalLinkWithInfoIconProps> = ({label,link}) =>  (
-    <MainDiv>
-     <div> 
-      <SvgIcnHelp3030 />
-     </div>
-      <a href={link}>
-        <Label label={label}/>
-      </a>
-    </MainDiv>
-  )
+  label: string;
+  link: string;
+}
+const ExternalLinkWithInfoIcon: FC<ExternalLinkWithInfoIconProps> = ({
+  label,
+  link,
+}) => (
+  <MainDiv>
+    <SvgIcnHelp3030 />
+    <ExternalLink text={label} hrefValue={link} />
+  </MainDiv>
+);
 
-export default ExternalLinkWithInfoIcon; 
+export default ExternalLinkWithInfoIcon;

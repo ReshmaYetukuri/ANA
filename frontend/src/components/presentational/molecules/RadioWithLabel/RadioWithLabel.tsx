@@ -1,42 +1,61 @@
-import { Radio } from "components/presentational/atoms/Radio/Radio"
-import { Label } from "components/presentational/atoms/Labels/Label"
-import { FC } from "react"
+import { Radio } from 'components/presentational/atoms/Radio/Radio';
+import { Label } from 'components/presentational/atoms/Labels/Label';
+import { FC } from 'react';
+import styled from '@emotion/styled';
 
-type RadioWithLabelProps={
-    groupName:string;
-    value:string;
-    isSelected?: boolean;
-    radioButtonChange?: React.ChangeEventHandler<HTMLInputElement>;
-    radioFor:string;
-    label:string;
-    fontColor?:string;
-    onClick?: React.MouseEventHandler<HTMLLabelElement>;
-}
+const Div = styled.div`
+  display: flex;
+  align-items: center;
+  label {
+    padding-left: 5px;
+  }
+`;
 
-export const RadioWithLabel:FC<RadioWithLabelProps>= ({
-    groupName,
-    value,
-    isSelected, 
-    radioFor, 
-    radioButtonChange, 
-    label,
-    fontColor,
-    onClick,
-})=>
-    <>
-        <Radio groupName={groupName} value={value} radioFor={radioFor} isSelected={isSelected} radioButtonChange={radioButtonChange} />
-        <Label label={label} labelFor={radioFor} fontColor={fontColor} onClick={onClick}/>
-    </>
+type RadioWithLabelProps = {
+  groupName: string;
+  value: string;
+  isSelected?: boolean;
+  radioButtonChange?: React.ChangeEventHandler<HTMLInputElement>;
+  radioFor: string;
+  label: string;
+  fontColor?: string;
+  onClick?: React.MouseEventHandler<HTMLLabelElement>;
+};
 
-RadioWithLabel.defaultProps={
-    isSelected:false,
-    radioButtonChange:()=>{
+export const RadioWithLabel: FC<RadioWithLabelProps> = ({
+  groupName,
+  value,
+  isSelected,
+  radioFor,
+  radioButtonChange,
+  label,
+  fontColor,
+  onClick,
+}) => (
+  <Div>
+    <Radio
+      groupName={groupName}
+      value={value}
+      radioFor={radioFor}
+      isSelected={isSelected}
+      radioButtonChange={radioButtonChange}
+    />
+    <Label
+      label={label}
+      labelFor={radioFor}
+      fontColor={fontColor}
+      onClick={onClick}
+    />
+  </Div>
+);
+
+RadioWithLabel.defaultProps = {
+  isSelected: false,
+  radioButtonChange: () => {
     // on change default function
-    },
-    fontColor:'black',
-    onClick:()=>{
-        // on click default function
-    },
-    
-
-}
+  },
+  fontColor: '',
+  onClick: () => {
+    // on click default function
+  },
+};

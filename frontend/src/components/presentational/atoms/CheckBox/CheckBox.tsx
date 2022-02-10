@@ -16,34 +16,28 @@ type CheckBoxStyledProps = {
 };
 
 const CheckBoxStyled = styled.div<CheckBoxStyledProps>`
-  .check {
-    visibility: hidden;
-  }
+.check-box {
+  appearance: none;
+  border: ${(props) => props.border ? `.5px solid ${constants.itemTitleBgColor2}` : 'none'};
+  display: inline-block;
+  font: 13px/1em sans-serif;
+  border-radius: .5px;
+  background: ${(props) =>props.background ? `${constants.commonButtonGradient}` : ` ${constants.basicBgColorInputField}`};
+}
 
-  .check:before {
-    border: ${(props) =>
-      props.border ? `.5px solid ${constants.dimmedTextColor}` : 'none'};
-    display: inline-block;
-    font: 13px/1em sans-serif;
-    height: 13px;
-    border-radius: 0.5px;
-    background: ${(props) =>
-      props.background ? `${constants.commonButtonGradient}` : 'white'};
-    padding: 0;
-    vertical-align: top;
-    width: 13px;
-    line-height: 13px;
-    visibility: visible;
-    content: '';
-  }
+.check-box:before {
+  display: inline-block;
+  height: 13px;
+  vertical-align: top;
+  width: 13px;
+  line-height: 13px;
+  content: '';
+}
 
-  .check:checked:before {
-    background: ${(props) =>
-      props.background ? `${constants.commonButtonGradient}` : 'white'};
-    content: '✔';
-    visibility: visible;
-  }
-`;
+.check-box:checked:before {
+  content: '✔';
+}
+`
 
 export const CheckBox: FC<CheckBoxProps> = ({
   value,
@@ -60,7 +54,7 @@ export const CheckBox: FC<CheckBoxProps> = ({
       value={value}
       onChange={onChange}
       id={checkBoxFor}
-      className="check"
+      className="check-box"
     />
   </CheckBoxStyled>
 );

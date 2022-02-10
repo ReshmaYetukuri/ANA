@@ -18,19 +18,24 @@ const A = styled.a`
   padding: 0 20px 2px 20px;
   text-decoration: none;
   width: 100%;
-  margin-left: 20px;
   font-size: ${constants.breadCrumbsFontSize};
   background-color: ${(props: AProps) =>
-    props.activeOrNot ? constants.tableTitleColor : constants.basicBgColorInputField};
+    props.activeOrNot
+      ? constants.tableTitleColor
+      : constants.basicBgColorInputField};
   color: ${(props: AProps) =>
-    props.activeOrNot ? constants.basicBgColorInputField : constants.tableTitleColor};
+    props.activeOrNot
+      ? constants.basicBgColorInputField
+      : constants.tableTitleColor};
   :hover {
     color: ${(props: AProps) =>
-      props.activeOrNot ? constants.basicBgColorInputField : constants.tableTitleColor};
+      props.activeOrNot
+        ? constants.basicBgColorInputField
+        : constants.tableTitleColor};
   }
 `;
 
-export const BreadcrumbBox :FC<BreadcrumbBoxProps> = ({
+export const BreadcrumbBox: FC<BreadcrumbBoxProps> = ({
   isActive,
   onClick,
   name,
@@ -44,5 +49,5 @@ BreadcrumbBox.defaultProps = {
   isActive: false,
   onClick: () => {
     //
-  }
+  },
 };

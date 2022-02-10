@@ -12,8 +12,6 @@ type InputWithSearchIconProps = {
 
 const MainDiv = styled.div`
   display: flex;
-  flex-direction: row;
-  padding-top: 0.7rem;
 `;
 
 export const InputWithSearchIcon: FC<InputWithSearchIconProps> = ({
@@ -29,8 +27,8 @@ export const InputWithSearchIcon: FC<InputWithSearchIconProps> = ({
     />
     <IconButton
       type={IconButtonTypes.search}
-      width="32px"
-      height="32px"
+      width="27px"
+      height="27px"
       isFullSize
     />
   </MainDiv>
