@@ -30,6 +30,7 @@ export const FlightNumberInput: FC<FlightNumberInputProps> = ({
       size={carrierTextBoxWidth}
       onChange={carrierTextBoxOnChange}
       value={carrierTextBoxValue}
+      maxLength={2}
     />
     <IconButton
       type={IconButtonTypes.search}

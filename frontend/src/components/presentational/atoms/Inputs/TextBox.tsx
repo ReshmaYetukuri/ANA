@@ -8,6 +8,7 @@ type TextBoxProps = {
   value: string;
   autoFocus?: boolean;
   width?: string;
+  maxLength?: number;
 };
 
 const Input = styled.input`
@@ -29,6 +30,7 @@ export const TextBox: FC<TextBoxProps> = ({
   value,
   autoFocus,
   width,
+  maxLength,
 }) => (
   <Input
     type="text"
@@ -37,6 +39,7 @@ export const TextBox: FC<TextBoxProps> = ({
     value={value}
     width={width}
     autoFocus={autoFocus}
+    maxLength={maxLength}
   />
 );
 
@@ -44,4 +47,5 @@ TextBox.defaultProps = {
   autoFocus: false,
   size: 1,
   width: '',
+  maxLength: 10000,
 };

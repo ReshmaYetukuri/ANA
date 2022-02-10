@@ -1,35 +1,18 @@
 import 'App.scss';
-import RouteDisplayCard from 'components/presentational/molecules/RouteDisplayComponents/RouteDisplayCard/RouteDisplayCard';
-// import { useState } from 'react';
-const data = {
-  heading: {
-    data1: 'S2',
+import { ErrorComponent } from 'components/presentational/molecules/Error/ErrorComponent';
 
-    data2: 'NH837',
+const data = [
+  {
+    errorMsg: '[ERROR] Date is required',
   },
-
-  date: {
-    date: '30DEC',
-
-    day: 'THU',
+  {
+    errorMsg: '[ERROR] Date is required',
   },
-
-  codes: {
-    code1: 'C(J)',
-
-    code2: 'HK8',
+  {
+    errorMsg: '[ERROR] Date is required',
   },
+];
 
-  time: {
-    timeCode1: 'HND',
-
-    time1: '10:15',
-
-    timeCode2: 'DEL',
-
-    time2: '17:05',
-  },
-};
 export const App = () => (
   // {
   //   const [state, setState] = useState('');
@@ -37,7 +20,7 @@ export const App = () => (
   //   return (
   <>
     <div style={{ width: 350, margin: 20 }}>
-      <RouteDisplayCard routeDisplayData={data} isCloseButton />
+      <ErrorComponent errors={data} />
     </div>
   </>
 );
