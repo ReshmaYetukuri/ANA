@@ -29,8 +29,8 @@ type Data = {
 };
 
 const DropdownContainer = styled(Dropdown)`
-  max-width:25rem;
-  width:${(props: ToggleProps) => props.width}rem;
+  max-width: 25rem;
+  width: ${(props: ToggleProps) => props.width}rem;
   .dropdown-toggle:focus {
     border-color: ${constants.itemTitleBgColor3};
   }
@@ -134,7 +134,7 @@ const Toggle = styled(DropdownToggle)`
     justify-content: space-between;
     align-items: center;
     padding: 0;
-    width:100%
+    width: 100%;
   }
 `;
 const Menu = styled(DropdownMenu)`
@@ -165,7 +165,7 @@ const Options = styled(DropdownItem)`
   }
 `;
 
-const SearchDropdown: React.FunctionComponent<DropdownSelectProps> = ({
+const DropdownSelect: React.FunctionComponent<DropdownSelectProps> = ({
   values,
   onChange,
   initialSelectedValue,
@@ -261,8 +261,8 @@ const SearchDropdown: React.FunctionComponent<DropdownSelectProps> = ({
   );
 };
 
-SearchDropdown.defaultProps = {
+DropdownSelect.defaultProps = {
   isShowError: false,
 };
 
-export default SearchDropdown;
+export default DropdownSelect;
