@@ -9,12 +9,12 @@ import SvgIconCacao from 'assets/svgr-components/IconCacao';
 import SvgIconPHtml from 'assets/svgr-components/IconPHtml';
 import SvgLoupe from 'assets/svgr-components/Loupe';
 import { JaAvailabilityDayofweekleftButton, JaAvailabilityDayofweekrightButton } from 'assets/svgr-components';
-import SvgMarvelCloseButton from 'assets/svgr-components/MarvelCloseButton';
+import SvgIcnClose3030 from 'assets/svgr-components/IcnClose3030';
 import constants from '../../../../constants/styleConstants.module.scss';
 
 
 const Button = styled.button<ButtonProps>`
-  background:${constants.commonButtonGradient};
+  background: ${constants.commonButtonGradient};
   border-width: 1px;
   border-color: ${constants.basicBgColor};
   text-align: center;
@@ -24,11 +24,10 @@ const Button = styled.button<ButtonProps>`
   display: flex;
   :hover {
     -webkit-box-shadow: 0px 0px 5px 2px ${constants.basicBgColor};
-    border-width: 1.5px;
   }
   svg {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -65,14 +64,13 @@ const returnIcon = (type: IconButtonTypes) => {
     // case 'calendar':
     //   return <Sv />;
     case IconButtonTypes.close:
-      return <SvgMarvelCloseButton />;
+      return <SvgIcnClose3030 />;
     case IconButtonTypes.usefulTools:
       return <SvgIcnHandy3030 />;
     case IconButtonTypes.arrowLeft:
-      return <JaAvailabilityDayofweekleftButton/>;
+      return <JaAvailabilityDayofweekleftButton />;
     case IconButtonTypes.arrowRight:
-      return <JaAvailabilityDayofweekrightButton/>;
-    
+      return <JaAvailabilityDayofweekrightButton />;
 
     default:
       return <span>No Image Found</span>;

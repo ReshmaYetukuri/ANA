@@ -1,4 +1,3 @@
-import 'App.scss';
 import Section from 'components/presentational/atoms/Section/Section';
 import PassengerInformationRow from 'components/presentational/molecules/Segments/PassengerInformationRow';
 import SectionContainerBoarding from 'components/presentational/molecules/Segments/SectionContainerBoarding';
@@ -51,5 +50,4 @@ export const App = () => (
   </>
 );
 
-
-export default App;
+export default App; 

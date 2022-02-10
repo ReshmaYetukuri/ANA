@@ -12,7 +12,7 @@ export interface flexProps {
 }
 
 const SectionDiv = styled.div<flexProps>`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   font-size: 0.7rem;

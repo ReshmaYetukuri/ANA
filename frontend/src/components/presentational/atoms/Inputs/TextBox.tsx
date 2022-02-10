@@ -8,12 +8,15 @@ type TextBoxProps = {
   value: string;
   autoFocus?: boolean;
   width?: string;
+  height?:string;
+  maxLength?: number;
 };
 
 const Input = styled.input`
   border: 1px solid ${constants.itemTitleBgColor2};
   font-size: ${constants.breadCrumbsFontSize};
   width: ${(props) => props.width};
+  height: ${(props) => props.height};
   &:focus {
     background-color: ${constants.inputFieldFocusBgColor};
     border-width: 1px;
@@ -29,6 +32,8 @@ export const TextBox: FC<TextBoxProps> = ({
   value,
   autoFocus,
   width,
+  height,
+  maxLength,
 }) => (
   <Input
     type="text"
@@ -36,7 +41,9 @@ export const TextBox: FC<TextBoxProps> = ({
     onChange={onChange}
     value={value}
     width={width}
+    height={height}
     autoFocus={autoFocus}
+    maxLength={maxLength}
   />
 );
 
@@ -44,4 +51,6 @@ TextBox.defaultProps = {
   autoFocus: false,
   size: 1,
   width: '',
+  height:'',
+  maxLength: 10000,
 };

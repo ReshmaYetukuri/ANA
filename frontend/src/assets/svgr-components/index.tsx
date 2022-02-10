@@ -90,6 +90,7 @@ export { default as IcnCheck } from './IcnCheck';
 export { default as IcnCheck2020 } from './IcnCheck2020';
 export { default as IcnCheckBlackW15H15 } from './IcnCheckBlackW15H15';
 export { default as IcnCheckRedW20H20 } from './IcnCheckRedW20H20';
+export { default as IcnClose3030 } from './IcnClose3030';
 export { default as IcnDeskNoffp } from './IcnDeskNoffp';
 export { default as IcnDivideArrowBlue } from './IcnDivideArrowBlue';
 export { default as IcnDivideArrowGray } from './IcnDivideArrowGray';

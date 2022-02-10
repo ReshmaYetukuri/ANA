@@ -4,7 +4,7 @@ import { FC } from 'react';
 import styled from '@emotion/styled';
 
 type CheckBoxWithLabelProps = {
-  value: string;
+  value?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   isChecked?: boolean;
   checkBoxFor: string;
@@ -61,4 +61,5 @@ CheckBoxWithLabel.defaultProps = {
   },
   background: true,
   border: true,
+  value: '',
 };
