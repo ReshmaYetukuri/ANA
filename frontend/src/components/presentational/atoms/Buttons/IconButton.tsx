@@ -14,7 +14,7 @@ import constants from '../../../../constants/styleConstants.module.scss';
 
 
 const Button = styled.button<ButtonProps>`
-  background:${constants.commonButtonGradient};
+  background: ${constants.commonButtonGradient};
   border-width: 1px;
   border-color: ${constants.basicBgColor};
   text-align: center;
@@ -24,11 +24,10 @@ const Button = styled.button<ButtonProps>`
   display: flex;
   :hover {
     -webkit-box-shadow: 0px 0px 5px 2px ${constants.basicBgColor};
-    border-width: 1.5px;
   }
   svg {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -65,14 +64,13 @@ const returnIcon = (type: IconButtonTypes) => {
     // case 'calendar':
     //   return <Sv />;
     case IconButtonTypes.close:
-      return <SvgIcnClose3030/>;
+      return <SvgIcnClose3030 />;
     case IconButtonTypes.usefulTools:
       return <SvgIcnHandy3030 />;
     case IconButtonTypes.arrowLeft:
-      return <JaAvailabilityDayofweekleftButton/>;
+      return <JaAvailabilityDayofweekleftButton />;
     case IconButtonTypes.arrowRight:
-      return <JaAvailabilityDayofweekrightButton/>;
-    
+      return <JaAvailabilityDayofweekrightButton />;
 
     default:
       return <span>No Image Found</span>;
