@@ -20,7 +20,7 @@ const Button = styled.button<ButtonProp>`
 type ButtonProp = {
   height?: string;
   width?: string;
-}
+};
 
 type ButtonProps = {
   name: string;
@@ -29,23 +29,28 @@ type ButtonProps = {
   onClick?: () => void;
 };
 
-export const CommonButton = ({ 
-  name, 
+export const CommonButton = ({
+  name,
   onClick = () => {
     //
-  }, 
-  height, 
-  width 
+  },
+  height,
+  width,
 }: ButtonProps) => (
-  <Button className={`button-${name}`} height={height} width={width} onClick={onClick}>
+  <Button
+    className={`button-${name}`}
+    height={height}
+    width={width}
+    onClick={onClick}
+  >
     {name}
   </Button>
 );
 
 CommonButton.defaultProps = {
-  onclick: () => {
+  height: '',
+  width: '',
+  onClick: () => {
     //
   },
-  height: '',
-  width: ''
 };
