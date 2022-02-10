@@ -141,6 +141,8 @@ const Menu = styled(DropdownMenu)`
   background-color: ${constants.inputFieldFocusBgColor};
   width: 100%;
   min-width: 0;
+  max-height: 32vh;
+  overflow: auto;
   border-radius: 0px;
   border: 1px solid ${constants.standardTextColor};
 `;
