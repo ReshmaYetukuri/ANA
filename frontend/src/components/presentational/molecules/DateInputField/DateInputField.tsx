@@ -112,7 +112,7 @@ export const DateInputField: FC<DateInputFeildProps> = ({ getDate }) => {
   return (
     <MainDiv>
       <TextBox
-        width="50px"
+        width="40px"
         height="30px"
         value={dayInputValue}
         onChange={handleInputChange}
