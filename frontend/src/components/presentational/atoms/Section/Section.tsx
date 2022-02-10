@@ -43,6 +43,7 @@ export interface SectionProps {
   color?: string;
   alignBottom?: boolean;
   flightNumberClick?: MouseEventHandler;
+  flightSeatClick?: MouseEventHandler;
 }
 
 const Section: FC<SectionProps> = ({
@@ -55,6 +56,7 @@ const Section: FC<SectionProps> = ({
   backGroundColor,
   color,
   flightNumberClick,
+  flightSeatClick,
   alignBottom = false,
 }) => (
   <SectionDiv
@@ -93,7 +95,7 @@ const Section: FC<SectionProps> = ({
           <ListAdd />
         </>
       )}
-    {type === 'Icon' && iconType === 'Seat' && <IconDSeatBlue />}
+    {type === 'Icon' && iconType === 'Seat' && <IconDSeatBlue onClick={flightSeatClick}  height="100%" width="50px" />}
     {type === 'Icon' && iconType === 'NoFFP' && (
       <IcnDeskNoffp height="27px" width="27px" />
     )}
