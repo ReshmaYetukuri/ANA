@@ -1,4 +1,4 @@
-import DropDown from '../../atoms/DropDown/Dropdown';
+import DropDown from  '../../atoms/DropDown/Dropdown';
 import { IconButtonTypes } from 'constants/commonTypes';
 import IconButton from 'components/presentational/atoms/Buttons/IconButton';
 import styled from '@emotion/styled';
