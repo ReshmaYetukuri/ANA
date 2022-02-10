@@ -24,7 +24,11 @@ const MainDiv = styled.div`
 export const DropdownWithSearchIcon:FC<DropdownWithSearchIconProps>=({listValues,onChange})=>
 <MainDiv>
 
-<DropDown values={listValues} onChange={onChange}/>
+<DropDown values={listValues} onChange={onChange} initialSelectedValue={{
+      id: "",
+      name: "",
+      value: ""
+    }} width={0}/>
 <IconButton
             type={IconButtonTypes.search}
             width="32px"
