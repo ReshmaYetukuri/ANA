@@ -9,8 +9,8 @@ import SvgIconCacao from 'assets/svgr-components/IconCacao';
 import SvgIconPHtml from 'assets/svgr-components/IconPHtml';
 import SvgLoupe from 'assets/svgr-components/Loupe';
 import { JaAvailabilityDayofweekleftButton, JaAvailabilityDayofweekrightButton } from 'assets/svgr-components';
-import SvgMarvelCloseButton from 'assets/svgr-components/MarvelCloseButton';
 import constants from '../../../../constants/styleConstants.module.scss';
+import SvgIcnClose3030 from 'assets/svgr-components/IcnClose3030';
 
 
 const Button = styled.button<ButtonProps>`
@@ -65,7 +65,7 @@ const returnIcon = (type: IconButtonTypes) => {
     // case 'calendar':
     //   return <Sv />;
     case IconButtonTypes.close:
-      return <SvgMarvelCloseButton />;
+      return <SvgIcnClose3030/>;
     case IconButtonTypes.usefulTools:
       return <SvgIcnHandy3030 />;
     case IconButtonTypes.arrowLeft:
