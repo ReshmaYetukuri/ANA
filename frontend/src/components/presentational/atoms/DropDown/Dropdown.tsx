@@ -29,6 +29,8 @@ type Data = {
 };
 
 const DropdownContainer = styled(Dropdown)`
+  max-width:25rem;
+  width:${(props: ToggleProps) => props.width}rem;
   .dropdown-toggle:focus {
     border-color: ${constants.itemTitleBgColor3};
   }
@@ -44,7 +46,6 @@ const Toggle = styled(DropdownToggle)`
   border-color: none;
   border: 2px solid ${constants.itemTitleBgColor3};
   font-weight: bold;
-  width: ${(props: ToggleProps) => props.width}em;
   height: 30px;
 
   &.dropdown-toggle {
@@ -63,7 +64,6 @@ const Toggle = styled(DropdownToggle)`
     border: 2px solid ${constants.itemTitleBgColor3};
   }
   .dropdown-icon {
-    width: 8%;
     height: 28px;
     padding: 2px 3px 0 5px;
     background: ${(props: ToggleProps) => !props.isError ? `${constants.commonButtonGradient}`: `${constants.errorMessageBgColor}`};
@@ -134,11 +134,12 @@ const Toggle = styled(DropdownToggle)`
     justify-content: space-between;
     align-items: center;
     padding: 0;
+    width:100%
   }
 `;
 const Menu = styled(DropdownMenu)`
   background-color: ${constants.inputFieldFocusBgColor};
-  width: ${(props: ToggleProps) => props.width}em;
+  width: 100%
   border-radius: 0px;
   border: 1px solid ${constants.standardTextColor};
 `;
@@ -231,7 +232,7 @@ const SearchDropdown: React.FunctionComponent<DropdownSelectProps> = ({
   };
 
   return (
-    <DropdownContainer className="dropdown">
+    <DropdownContainer className="dropdown" width={width} >
       <Toggle variant="" width={width} isError={isError}>
         <input
           type="text"
