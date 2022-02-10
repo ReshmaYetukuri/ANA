@@ -139,7 +139,8 @@ const Toggle = styled(DropdownToggle)`
 `;
 const Menu = styled(DropdownMenu)`
   background-color: ${constants.inputFieldFocusBgColor};
-  width: 100%
+  width: 100%;
+  min-width: 0;
   border-radius: 0px;
   border: 1px solid ${constants.standardTextColor};
 `;
