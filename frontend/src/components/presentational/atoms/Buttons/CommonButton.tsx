@@ -8,8 +8,8 @@ const Button = styled.button<ButtonProp>`
   font-size: 0.75rem;
   font-weight: 600;
   border-style: outset;
-  min-height: ${(props) => props.height};
-  min-width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  width: ${(props) => props.width};
   border-color: ${constants.itemTitleBgColor2};
   :hover {
     border-color: ${constants.popupWindowStanadardBgColor};
