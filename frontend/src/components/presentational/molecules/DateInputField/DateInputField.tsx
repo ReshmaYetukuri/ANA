@@ -12,13 +12,14 @@ const MainDiv = styled.div`
 
 type DateInputFeildProps = {
   getDate: (date: { day: string; month: string }) => void;
+  showYearInput?: boolean;
 };
 
 type Data = {
-    id: string;
-    name: string;
-    value: string;
-  };
+  id: string;
+  name: string;
+  value: string;
+};
 
 const datas = [
   {
@@ -83,9 +84,15 @@ const datas = [
   },
 ];
 
-export const DateInputField: FC<DateInputFeildProps> = ({ getDate }) => {
-  const [date, setDate] = useState({ day: '', month: '' });
+export const DateInputField: FC<DateInputFeildProps> = ({
+  getDate,
+  showYearInput,
+}) => {
+  const [date, setDate] = useState({ day: '', month: '', year: '' });
   const [dayInputValue, setDayInput] = useState('');
+  const [yearInputValue, setYearInput] = useState(
+    new Date().getFullYear().toString().substring(2)
+  );
   const [initialValue, setInitialValue] = useState({
     id: '',
     name: '',
@@ -100,14 +107,32 @@ export const DateInputField: FC<DateInputFeildProps> = ({ getDate }) => {
     selectedDayEvent: React.ChangeEvent<HTMLInputElement>
   ) => {
     setDayInput(selectedDayEvent.target.value);
-    setDate({ day: selectedDayEvent.target.value, month: initialValue.value });
+    setDate({
+      day: selectedDayEvent.target.value,
+      month: initialValue.value,
+      year: yearInputValue,
+    });
   };
 
   const handleDropDownChange = (selectedMonth: Data) => {
     setInitialValue(selectedMonth);
-    setDate({ day:dayInputValue , month: selectedMonth.value });
+    setDate({
+      day: dayInputValue,
+      month: selectedMonth.value,
+      year: yearInputValue,
+    });
+  };
 
-  }
+  const handleYearInputChange = (
+    selectedYearEvent: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setYearInput(selectedYearEvent.target.value);
+    setDate({
+      day: dayInputValue,
+      month: initialValue.value,
+      year: selectedYearEvent.target.value,
+    });
+  };
 
   return (
     <MainDiv>
@@ -116,6 +141,7 @@ export const DateInputField: FC<DateInputFeildProps> = ({ getDate }) => {
         height="30px"
         value={dayInputValue}
         onChange={handleInputChange}
+        maxLength={2}
       />
       <SearchDropdown
         values={datas}
@@ -123,6 +149,15 @@ export const DateInputField: FC<DateInputFeildProps> = ({ getDate }) => {
         initialSelectedValue={initialValue}
         width={10}
       />
+      {showYearInput && (
+        <TextBox
+          width="40px"
+          height="30px"
+          value={yearInputValue}
+          onChange={handleYearInputChange}
+          maxLength={2}
+        />
+      )}
       <IconButton
         type={IconButtonTypes.help}
         width="30px"
@@ -131,4 +166,8 @@ export const DateInputField: FC<DateInputFeildProps> = ({ getDate }) => {
       />
     </MainDiv>
   );
+};
+
+DateInputField.defaultProps={
+showYearInput: false,
 };
