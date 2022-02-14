@@ -10,4 +10,5 @@ export enum IconButtonTypes { // eslint-disable-line
   'usefulTools',
   'arrowRight',
   'arrowLeft',
+  'calendar'
 }

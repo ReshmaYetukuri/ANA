@@ -159,7 +159,7 @@ export const DateInputField: FC<DateInputFeildProps> = ({
         />
       )}
       <IconButton
-        type={IconButtonTypes.help}
+        type={IconButtonTypes.calendar}
         width="30px"
         height="30px"
         isFullSize
