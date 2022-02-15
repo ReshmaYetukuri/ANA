@@ -15,6 +15,7 @@ type TextBoxProps = {
 const Input = styled.input`
   border: 1px solid ${constants.itemTitleBgColor2};
   font-size: ${constants.breadCrumbsFontSize};
+  margin:0 2px 0 2px;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   &:focus {

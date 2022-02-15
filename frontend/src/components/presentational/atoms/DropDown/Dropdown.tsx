@@ -10,16 +10,16 @@ type DropdownSelectProps = {
   onChange: (e: Data) => void;
   initialSelectedValue: Data;
   width: number;
-  isError?: boolean;
+  isShowError?: boolean;
 };
 
 type ToggleProps = {
   width: number;
-  isError?: boolean;
+  isShowError?:boolean;
 };
 
 type OptionProps = {
-  isError?: boolean;
+  isShowError?:boolean;
 };
 
 type Data = {
@@ -66,10 +66,7 @@ const Toggle = styled(DropdownToggle)`
   .dropdown-icon {
     height: 28px;
     padding: 2px 3px 0 5px;
-    background: ${(props: ToggleProps) =>
-      !props.isError
-        ? `${constants.commonButtonGradient}`
-        : `${constants.errorMessageBgColor}`};
+    background: ${(props: ToggleProps) => !props.isShowError ? `${constants.commonButtonGradient}`: `${constants.errorMessageBgColor}`};
     &:active,
     focus {
       background: ${constants.inputFieldFocusBgColor} !important;
@@ -108,14 +105,8 @@ const Toggle = styled(DropdownToggle)`
     width: 92%;
     padding: 0 5px;
     height: 100%;
-    color: ${(props: OptionProps) =>
-      !props.isError
-        ? `${constants.standardTextColor}`
-        : `${constants.errorMessageFontColor}`};
-    background-color: ${(props: ToggleProps) =>
-      !props.isError
-        ? `${constants.basicBgColorInputField}`
-        : `${constants.errorMessageBgColor}`};
+    color: ${(props: OptionProps) => !props.isShowError ? `${constants.standardTextColor}`: `${constants.errorMessageFontColor}`};
+    background-color: ${(props: ToggleProps) => !props.isShowError ? `${constants.basicBgColorInputField}`: `${constants.errorMessageBgColor}`};
   }
   input:focus-visible {
     outline: none;
@@ -150,6 +141,8 @@ const Menu = styled(DropdownMenu)`
   background-color: ${constants.inputFieldFocusBgColor};
   width: 100%;
   min-width: 0;
+  max-height: 32vh;
+  overflow: auto;
   border-radius: 0px;
   border: 1px solid ${constants.standardTextColor};
 `;
@@ -162,10 +155,7 @@ const DefaultOption = styled(DropdownItem)`
 const Options = styled(DropdownItem)`
   font-weight: bold;
   padding: 5px;
-  color: ${(props: OptionProps) =>
-    !props.isError
-      ? `${constants.standardTextColor}`
-      : `${constants.errorMessageFontColor}`};
+  color: ${(props: OptionProps) => !props.isShowError ? `${constants.standardTextColor}`: `${constants.errorMessageFontColor}`};
   &:hover {
     background-color: ${constants.itemTitleBgColor2};
   }
@@ -182,7 +172,7 @@ const DropdownSelect: React.FunctionComponent<DropdownSelectProps> = ({
   onChange,
   initialSelectedValue,
   width,
-  isError,
+  isShowError,
 }) => {
   const handleClick = (data: Data) => {
     onChange(data);
@@ -245,8 +235,8 @@ const DropdownSelect: React.FunctionComponent<DropdownSelectProps> = ({
   };
 
   return (
-    <DropdownContainer className="dropdown" width={width}>
-      <Toggle variant="" width={width} isError={isError}>
+    <DropdownContainer className="dropdown" width={width} >
+      <Toggle variant="" width={width} isShowError={isShowError}>
         <input
           type="text"
           value={initialSelectedValue.value}
@@ -257,11 +247,10 @@ const DropdownSelect: React.FunctionComponent<DropdownSelectProps> = ({
         <span className="dropdown-icon" />
       </Toggle>
 
-      <Menu width={width} isError={isError}>
+      <Menu width={width} isShowError={isShowError}>
         <DefaultOption />
         {values.map((data) => (
-          <Options
-            isError={isError}
+          <Options isShowError={isShowError}
             className={` ${isSelectedItem(data.value) ? 'selected-item' : ''}`}
             onClick={() => handleClick(data)}
             key={data.id}
@@ -275,7 +264,7 @@ const DropdownSelect: React.FunctionComponent<DropdownSelectProps> = ({
 };
 
 DropdownSelect.defaultProps = {
-  isError: false,
+  isShowError: false,
 };
 
 export default DropdownSelect;

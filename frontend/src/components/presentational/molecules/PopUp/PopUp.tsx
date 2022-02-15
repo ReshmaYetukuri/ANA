@@ -76,7 +76,7 @@ const Buttons = ({
 );
 
 type PopUpProps = {
-  popupHeading?: string;
+  popupHeading?: JSX.Element | JSX.Element[] | string;
   modalSize?: 'xl' | 'sm' | 'lg';
   popUpClassName?: string;
   modelErrorType?: string;

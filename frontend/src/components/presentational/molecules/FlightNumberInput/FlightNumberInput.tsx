@@ -17,6 +17,7 @@ const MainDiv = styled.div`
   display: flex;
 `;
 
+const maxLength = 2;
 export const FlightNumberInput: FC<FlightNumberInputProps> = ({
   carrierTextBoxOnChange,
   carrierTextBoxValue,
@@ -30,7 +31,7 @@ export const FlightNumberInput: FC<FlightNumberInputProps> = ({
       size={carrierTextBoxWidth}
       onChange={carrierTextBoxOnChange}
       value={carrierTextBoxValue}
-      maxLength={2}
+      maxLength={maxLength}
     />
     <IconButton
       type={IconButtonTypes.search}
@@ -41,7 +42,7 @@ export const FlightNumberInput: FC<FlightNumberInputProps> = ({
     <TextBox
       size={flightNumberTextBoxWidth}
       onChange={flightNumberTextBoxOnChange}
-      value={flightNumberTextBoxValue}
+      value={flightNumberTextBoxValue} 
     />
   </MainDiv>
 );
