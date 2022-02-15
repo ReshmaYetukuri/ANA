@@ -8,7 +8,7 @@ import SvgIcnSwipe from 'assets/svgr-components/IcnSwipe';
 import SvgIconCacao from 'assets/svgr-components/IconCacao';
 import SvgIconPHtml from 'assets/svgr-components/IconPHtml';
 import SvgLoupe from 'assets/svgr-components/Loupe';
-import iconCalendar from 'assets/images/icon-calender.gif';
+import SvgIconCalender15 from 'assets/svgr-components/IconCalender15';
 import { JaAvailabilityDayofweekleftButton, JaAvailabilityDayofweekrightButton } from 'assets/svgr-components';
 import SvgIcnClose3030 from 'assets/svgr-components/IcnClose3030';
 import constants from '../../../../constants/styleConstants.module.scss';
@@ -63,7 +63,7 @@ const returnIcon = (type: IconButtonTypes) => {
     case IconButtonTypes.webMinds:
       return <SvgButtonWebMindsSmall />;
     case IconButtonTypes.calendar:
-      return <img src={iconCalendar} alt='calendar' />;
+      return <SvgIconCalender15/>
     case IconButtonTypes.close:
       return <SvgIcnClose3030 />;
     case IconButtonTypes.usefulTools:
