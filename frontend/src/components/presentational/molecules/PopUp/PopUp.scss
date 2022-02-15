@@ -1,0 +1,45 @@
+.FSHModalContent {
+  .modal-body {
+    height: 30rem;
+  }
+  .modal-content {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 8%;
+  }
+  tbody {
+    height: 23.5rem;
+  }
+  .table-No- {
+    width: 8%;
+  }
+  .table-DEP-APO,
+  .table-ARR-APO {
+    width: 23%;
+  }
+  .table-Select {
+    width: 12%;
+  }
+}
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  height: 38.25rem;
+  padding: 0;
+  background: #eee;
+}
+
+.modal-header {
+  height: 3.3rem;
+  background: linear-gradient(
+    89deg,
+    rgba(0, 160, 155, 1) 0%,
+    rgba(0, 160, 155, 1) 96%
+  );
+}
+
+.modal-content {
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}

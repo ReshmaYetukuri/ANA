@@ -5,6 +5,7 @@ import { IconButtonTypes } from '../../../../constants/commonTypes';
 import IconButton from '../../atoms/Buttons/IconButton';
 
 import { ErrorComponent } from '../Error/ErrorComponent';
+import './PopUp.scss';
 
 const Label = styled.label`
   font-size: 1.2rem;
