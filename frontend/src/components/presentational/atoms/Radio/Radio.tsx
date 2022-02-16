@@ -2,23 +2,21 @@ import { FC } from 'react';
 import styled from '@emotion/styled';
 import constants from '../../../../constants/styleConstants.module.scss';
 
-const CheckBoxStyled=styled.div`
-  .radio{
-    appearance: none;
-    display: inline-block;
-    width: 13px;
-    height: 13px;
-    padding: 1px; 
-    background-clip: content-box;
-    border: .5px solid ${constants.itemTitleBgColor2};
-    background-color: ${constants.basicBgColorInputField};
-    border-radius: 50%;
-}
+const RadioStyled = styled.input`
+  appearance: none;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  padding: 1px;
+  background-clip: content-box;
+  border: 0.5px solid ${constants.itemTitleBgColor2};
+  background-color: ${constants.basicBgColorInputField};
+  border-radius: 50%;
 
-  .radio:checked{
+  &:checked {
     background-color: ${constants.standardTextColor};
-}
-`
+  }
+`;
 
 interface RadioProps {
   groupName: string;
@@ -35,17 +33,14 @@ export const Radio: FC<RadioProps> = ({
   isSelected,
   radioFor,
 }) => (
-  <CheckBoxStyled>
-  <input
+  <RadioStyled
     type="radio"
     name={groupName}
     value={value}
     defaultChecked={isSelected}
     onChange={radioButtonChange}
     id={radioFor}
-    className='radio'
   />
-  </CheckBoxStyled>
 );
 
 Radio.defaultProps = {
@@ -53,5 +48,5 @@ Radio.defaultProps = {
   radioButtonChange: () => {
     // on change default function
   },
-  radioFor:''
+  radioFor: '',
 };
