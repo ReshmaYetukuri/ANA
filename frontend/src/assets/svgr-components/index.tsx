@@ -152,6 +152,7 @@ export { default as IcnSignoutImgInt } from './IcnSignoutImgInt';
 export { default as IcnSwipe } from './IcnSwipe';
 export { default as IcnWarning } from './IcnWarning';
 export { default as IcnYen } from './IcnYen';
+export { default as IconCalender15 } from './IconCalender15';
 export { default as IconAAward } from './IconAAward';
 export { default as IconAAwardOal } from './IconAAwardOal';
 export { default as IconAAwardOld } from './IconAAwardOld';

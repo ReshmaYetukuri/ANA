@@ -9,55 +9,55 @@ const SectionContainerProps = styled.div`
   border: 2px solid ${constants.itemTitleBgColor2};
 `;
 
-export interface SegmentInformationsProps {
+export interface SectionContainerBoardingProps {
   data: {
-    seatNo: string;
-    flightNo: string;
-    flightLink: string;
-    date: string[];
-    place: string[];
-    time: string[];
-    col1: string;
-    col2: string;
-    col3: string;
-    col4: string;
-    col5: string;
-    col6: string;
+    segmentNo:string;
+    flightNo:string;
+    date:string[];
+    place:string[];
+    time:string[];    
+    col1:React.ReactNode;
+    col2:React.ReactNode;
+    col3:React.ReactNode;
+    col4:React.ReactNode;
+    col5:React.ReactNode;
+    col6:React.ReactNode;
+    col7:React.ReactNode;
   };
   onFlightNumberClicked?: MouseEventHandler;
 }
 
-const SegmentInformationsBoarding = ({
+const SectionContainerBoarding = ({
   data,
   onFlightNumberClicked,
-}: SegmentInformationsProps) => (
+}: SectionContainerBoardingProps) => (
   <SectionContainerProps>
     <>
       <Section
         type="TextAndIcon"
         iconType="Plus"
-        content={[data.seatNo]}
+        content={[data.segmentNo]}
         backGroundColor={constants.PAXorSEGAddedBgColor1}
         color={constants.PAXorSEGDeletedBgColor2}
       />
       <Section
         type="Link"
         linkName={data.flightNo}
-        linkUrl={data.flightLink}
+        linkUrl={data.flightNo}
         flightNumberClick={onFlightNumberClicked}
       />
       <Section type="Text" content={data.date} />
       <Section type="Text" content={data.place} flexValue={3} />
       <Section type="Text" content={data.time} />
-      <Section type="Text" content={[data.col1]} />
-      <Section type="Text" content={[data.col2]} />
-      <Section type="Text" content={[data.col3]} />
-      <Section type="Text" content={[data.col4]} />
-      <Section type="Text" content={[data.col5]} />
-      <Section type="Text" content={[data.col6]} />
-      <Section type="Icon" iconType="Seat" />
+      {data.col1}
+      {data.col2}
+      {data.col3}
+      {data.col4}
+      {data.col5}
+      {data.col6}
+      {data.col7}
     </>
   </SectionContainerProps>
 );
 
-export default SegmentInformationsBoarding;
+export default SectionContainerBoarding;
