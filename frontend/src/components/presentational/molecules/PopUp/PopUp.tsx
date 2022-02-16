@@ -5,26 +5,26 @@ import { IconButtonTypes } from '../../../../constants/commonTypes';
 import IconButton from '../../atoms/Buttons/IconButton';
 
 import { ErrorComponent } from '../Error/ErrorComponent';
+import constants from '../../../../constants/styleConstants.module.scss';
 import './PopUp.scss';
 
 const Label = styled.label`
-  font-size: 1.2rem;
-  padding: 0rem 0 0 0.5rem;
+  font-size: ${constants.standardSubTextsize};
   font-weight: bold;
-  color: white;
+  color: ${constants.basicBgColorInputField};
 `;
 
 const Footer = styled.div`
-  background: #c3c3c3;
-  padding: 10px;
+  background: ${constants.popupFooterColor};
+  padding: ${constants.popupPadding};
 `;
 
 const ButtonWrapper = styled.div`
   display: flex;
   float: right;
   gap: 2px;
-  img {
-    padding-right: 3px;
+  button {
+    margin-right: 3px;
   }
 `;
 type ButtonType = {
@@ -49,8 +49,8 @@ const Buttons = ({
       <IconButton
         onclick={onStarClicked}
         type={IconButtonTypes.usefulTools}
-        width="40px"
-        height="40px"
+        width="1.25rem"
+        height="1.25rem"
         isFullSize
       />
     ) : null}
@@ -58,8 +58,8 @@ const Buttons = ({
       <IconButton
         onclick={onHelpClicked}
         type={IconButtonTypes.help}
-        width="40px"
-        height="40px"
+        width="1.25rem"
+        height="1.25rem"
         isFullSize
       />
     ) : null}
@@ -67,8 +67,8 @@ const Buttons = ({
       <IconButton
         onclick={onClosePopUp}
         type={IconButtonTypes.close}
-        width="40px"
-        height="40px"
+        width="1.25rem"
+        height="1.25rem"
         isFullSize
       />
     ) : null}
