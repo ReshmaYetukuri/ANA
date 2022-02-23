@@ -10,7 +10,7 @@ const restrictBrowserActions = () => {
         [65, 69, 70, 72, 73, 74, 76, 78, 79, 80, 83, 84, 87].includes(
           e.keyCode
         ) &&
-        (navigator.platform.match('Mac') ? e.metaKey : e.altKey || e.altKey)
+        (navigator.platform.match('Mac') ? e.metaKey : e.ctrlKey || e.altKey)
       ) {
         e.preventDefault();
       }
