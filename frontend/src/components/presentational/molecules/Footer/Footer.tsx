@@ -10,7 +10,7 @@ import { ErrorContent } from './Components/ErrorItem';
 interface footerprops {
   showLoader: boolean;
   width?: string;
-  error: Array<ErrorType>;
+  error: Array<ErrorType> | [];
   isWbcEventOccured: boolean;
 }
 
@@ -59,6 +59,7 @@ const ErrorDisplayArea = styled.div`
   font-family: ${constants.fontFamilyLight};
   font-size: ${constants.crypticResultFontSizeHTML};
   color: ${constants.errorMessageFontColor};
+  cursor:default;
   background: linear-gradient(
     90deg,
     ${constants.errorMessageBgColor} 98%,
@@ -87,11 +88,10 @@ export const Footer: FunctionComponent<footerprops> = ({
   };
 
   const [sessionTimeOut, setSessionTimeOut] = useState(getUpdatedSessionTime());
-  const [errorValues, setErrorValues] = useState([
-    {
-      errorValue: '',
-      errorId: '',
-    },
+  const [errorValues, setErrorValues] = useState([{
+    errorValue: '',
+    errorId: '',
+  }
   ]);
 
   useEffect(() => {
