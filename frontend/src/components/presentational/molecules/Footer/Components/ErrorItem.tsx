@@ -15,9 +15,7 @@ interface ErrorType {
 }
 
 const ErrorItem = styled.div`
-  display: flex;
-  align-items: center;
-  width: 98%;
+  width: 100%;
   min-height: 26px;
   padding-left: 4px;
   font-family: ${constants.fontFamilyLight};
@@ -47,4 +45,3 @@ export const ErrorContent: FunctionComponent<footerprops> = ({
 );
 
 export default ErrorContent;
-

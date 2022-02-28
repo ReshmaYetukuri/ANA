@@ -12,7 +12,7 @@ type ToolTipsProps = {
 const ToolTip = styled(Tooltip)`
   .tooltip-inner {
     display: flex;
-    width: 98%;
+    width: 100%;
     min-width: 40rem;
     font-family: ${constants.fontFamilyLight};
     font-size: ${constants.breadCrumbsFontSize};

@@ -23,14 +23,16 @@ interface ErrorType {
 const FooterContainer = styled.div`
   display: inline-flex;
   width: ${(props: footerprops) => props.width};
-  padding: 5px;
+  padding: 10px;
   color: ${constants.standardTextColor};
+  background: ${constants.basicBgColor};
 `;
 const TimerIconWrapper = styled.div`
   display: flex;
-  width: 30px;
+  justify-content: center;
+  width: 60px;
   height: 30px;
-  padding: 2px;
+  padding: 1px;
   color: ${constants.contentColor};
   background-color: ${constants.basicColor};
   border: 2px solid ${constants.basicColor};
@@ -39,39 +41,34 @@ const TimerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 75px;
+  width: 80px;
   height: 30px;
   padding: 2px;
+  margin-right: 8rem;
   font-family: ${constants.fontFamilyRegular};
   font-size: ${constants.crypticResultFontSizeHTML};
   color: ${constants.basicColor};
+  background: ${constants.contentColor};
   border: 2px solid ${constants.basicColor};
 `;
 
 const ErrorDisplayArea = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: calc(100% - 110px);
+  width: 100%;
   height: 45px;
   padding: 2px;
-  margin-left: 5px;
   overflow: auto;
   font-family: ${constants.fontFamilyLight};
   font-size: ${constants.crypticResultFontSizeHTML};
   color: ${constants.errorMessageFontColor};
-  cursor:default;
-  background: linear-gradient(
-    90deg,
-    ${constants.errorMessageBgColor} 98%,
-    ${constants.basicBgColor} 2%
-  );
+  cursor: default;
+  background: ${constants.errorMessageBgColor};
   border: 1px solid ${constants.dimmedTextColor};
 `;
 
 const LoaderContainer = styled.div`
   display: flex;
   width: 45px;
-  height: px;
+  height: 45px;
   margin-left: 10px;
 `;
 
@@ -82,16 +79,17 @@ export const Footer: FunctionComponent<footerprops> = ({
   showLoader,
 }) => {
   const getUpdatedSessionTime = () => {
-    const sessionTime = format(addMinutes(new Date(), 29), 'HH:mm');
+    const sessionTime = format(addMinutes(new Date(), 20), 'HH:mm');
 
     return sessionTime;
   };
 
   const [sessionTimeOut, setSessionTimeOut] = useState(getUpdatedSessionTime());
-  const [errorValues, setErrorValues] = useState([{
-    errorValue: '',
-    errorId: '',
-  }
+  const [errorValues, setErrorValues] = useState([
+    {
+      errorValue: '',
+      errorId: '',
+    },
   ]);
 
   useEffect(() => {
@@ -133,7 +131,11 @@ export const Footer: FunctionComponent<footerprops> = ({
       <ErrorDisplayArea>
         {errorValues &&
           errorValues.map((itemError: ErrorType) => (
-            <ErrorContent key={itemError.errorId} erroritem={itemError} handleClick={handleItemClick} />
+            <ErrorContent
+              key={itemError.errorId}
+              erroritem={itemError}
+              handleClick={handleItemClick}
+            />
           ))}
       </ErrorDisplayArea>
       {showLoader && (
@@ -148,5 +150,5 @@ export const Footer: FunctionComponent<footerprops> = ({
 export default Footer;
 
 Footer.defaultProps = {
-  width: '50rem',
+  width: '60rem',
 };
