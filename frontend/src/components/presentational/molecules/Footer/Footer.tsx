@@ -4,8 +4,7 @@ import SvgClock from 'assets/svgr-components/Clock';
 import { format, addMinutes } from 'date-fns';
 import loader from '../../../../assets/images/communicating_15.gif';
 import constants from '../../../../constants/styleConstants.module.scss';
-import { ErrorContent } from './Components/ErrorItem';
-// import { ErrorComponent } from '../Error/ErrorComponent';
+import { ErrorComponent } from '../Error/ErrorComponent';
 
 interface footerprops {
   showLoader: boolean;
@@ -15,9 +14,7 @@ interface footerprops {
 }
 
 interface ErrorType {
-  errorValue: string;
-  errorId: string;
-  isselected?: boolean;
+  errorMsg: string;
 }
 
 const FooterContainer = styled.div`
@@ -52,19 +49,6 @@ const TimerWrapper = styled.div`
   border: 2px solid ${constants.basicColor};
 `;
 
-const ErrorDisplayArea = styled.div`
-  width: 100%;
-  height: 45px;
-  padding: 2px;
-  overflow: auto;
-  font-family: ${constants.fontFamilyLight};
-  font-size: ${constants.crypticResultFontSizeHTML};
-  color: ${constants.errorMessageFontColor};
-  cursor: default;
-  background: ${constants.errorMessageBgColor};
-  border: 1px solid ${constants.dimmedTextColor};
-`;
-
 const LoaderContainer = styled.div`
   display: flex;
   width: 45px;
@@ -85,12 +69,6 @@ export const Footer: FunctionComponent<footerprops> = ({
   };
 
   const [sessionTimeOut, setSessionTimeOut] = useState(getUpdatedSessionTime());
-  const [errorValues, setErrorValues] = useState([
-    {
-      errorValue: '',
-      errorId: '',
-    },
-  ]);
 
   useEffect(() => {
     if (isWbcEventOccured) {
@@ -98,23 +76,6 @@ export const Footer: FunctionComponent<footerprops> = ({
     }
   }, [isWbcEventOccured]);
 
-  useEffect(() => {
-    setErrorValues(error);
-  }, [error]);
-
-  const handleItemClick = (id: string) => {
-    const updatedError = errorValues.map((errorItem: ErrorType) => {
-      const tempErrorItem = errorItem;
-      if (tempErrorItem.errorId === id) {
-        tempErrorItem.isselected = true;
-      } else {
-        tempErrorItem.isselected = false;
-      }
-
-      return errorItem;
-    });
-    setErrorValues(updatedError);
-  };
 
   return (
     <FooterContainer
@@ -127,17 +88,7 @@ export const Footer: FunctionComponent<footerprops> = ({
         <SvgClock />
       </TimerIconWrapper>
       <TimerWrapper>{sessionTimeOut}</TimerWrapper>
-      {/* <ErrorComponent/> */}
-      <ErrorDisplayArea>
-        {errorValues &&
-          errorValues.map((itemError: ErrorType) => (
-            <ErrorContent
-              key={itemError.errorId}
-              erroritem={itemError}
-              handleClick={handleItemClick}
-            />
-          ))}
-      </ErrorDisplayArea>
+      <ErrorComponent errors={error} width="100%" />
       {showLoader && (
         <LoaderContainer>
           <img src={loader} alt="loading" />
