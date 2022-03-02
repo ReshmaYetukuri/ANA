@@ -88,7 +88,7 @@ export const Footer: FunctionComponent<footerprops> = ({
         <SvgClock />
       </TimerIconWrapper>
       <TimerWrapper>{sessionTimeOut}</TimerWrapper>
-      <ErrorComponent errors={error} width="100%" />
+      <ErrorComponent errors={error}/>
       {showLoader && (
         <LoaderContainer>
           <img src={loader} alt="loading" />
