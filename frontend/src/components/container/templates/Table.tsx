@@ -5,7 +5,7 @@ interface TableHeadProps {
 }
 
 const CTABLE = styled.table<TableHeadProps>`
-  width: 97%;
+  width: 100%;
   border-collapse: collapse;
   margin: 3rem 0rem 0rem 1rem;
   background-color: #0f999c;
@@ -27,16 +27,24 @@ const CTABLE = styled.table<TableHeadProps>`
     color: white;
     background: #0f999c;
     text-align: left;
+    tr {
+      th::before{
+          content:'*',
+          color:red;
+          display:inline-block;
+          font-size:1rem;
+      }
+    }
   }
   tbody {
     display: block;
-    height: 500px;
-    overflow-y: scroll;
+    height: 1000px;
+    // overflow-y: scroll;
     background-color: white;
   }
   th,
   td {
-    width: ${(props: TableHeadProps) => +(100 / props.tableHead).toFixed(2)}%;
+    width: calc(100% / 7);
     padding: 5px;
     word-break: break-all;
   }
@@ -64,17 +72,19 @@ const CTABLE = styled.table<TableHeadProps>`
 interface TableProps {
   tableHeading: string[];
   tableData: {
-    date1: string;
-    date2: string;
-    dep: string;
-    arr: string;
-    select: string;
+    fltNo: string;
+    cls: string;
+    date: string;
+    depApo: string;
+    arrApo: string;
+    actionCode: string;
   }[];
 }
 const Table = ({ tableHeading, tableData }: TableProps) => (
   <CTABLE tableHead={tableHeading.length}>
     <thead>
       <tr>
+      <th className="actions">dfs</th>
         {tableHeading.map((heading) => (
           <th
             className={`table-${heading.replace(/[. ,:-]+/g, '-')}`}
@@ -87,32 +97,29 @@ const Table = ({ tableHeading, tableData }: TableProps) => (
     </thead>
     <tbody>
       {tableData.map((item, index) => (
-        <tr key={`table-${item.date1}-${item.dep}`}>
+        <tr key={`table-${item?.fltNo ? item.fltNo:'emptyflaNo'}-${item?.cls ? item.fltNo:'emptycls'}`}>
+          <td className={`table-row-${index+1}-actions`}>
+            <input type='checkbox' />
+          </td>
           <td className={`table-${tableHeading[0].replace(/[. ,:-]+/g, '-')}`}>
-            {index + 1}
+          {index + 1} {item.fltNo}
           </td>
           <td className={`table-${tableHeading[1].replace(/[. ,:-]+/g, '-')}`}>
-            {item.date1}
+            {item.cls}
           </td>
           <td className={`table-${tableHeading[2].replace(/[. ,:-]+/g, '-')}`}>
-            {item.date2}
+            {item.date}
           </td>
           <td className={`table-${tableHeading[3].replace(/[. ,:-]+/g, '-')}`}>
-            {item.dep}
+            {item.depApo}
           </td>
           <td className={`table-${tableHeading[4].replace(/[. ,:-]+/g, '-')}`}>
-            {item.arr}
+            {item.arrApo}
           </td>
-          {/* <td className={`table-${tableHeading[5].replace(/[. ,:-]+/g, '-')}`}>
-            <a
-              href="void(0)"
-              onClick={(e) => {
-                e.preventDefault();
-              }}
-            >
-              {item.select}
-            </a>
-          </td> */}
+          <td className={`table-${tableHeading[5].replace(/[. ,:-]+/g, '-')}`}>
+            {item.actionCode}
+          </td>
+           
         </tr>
       ))}
     </tbody>

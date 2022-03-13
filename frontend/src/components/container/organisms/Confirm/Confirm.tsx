@@ -107,7 +107,7 @@ const ConfirmationMessage: FC<ConfirmationMessageProps> = ({
                   <div className="button-wrapper">
                     <CommonButton
                       name="Ok"
-                      disabled={isVerification ? !checked : false}
+                      // disabled={isVerification ? !checked : false}
                       width="6rem"
                       onClick={onOkClicked}
                     />

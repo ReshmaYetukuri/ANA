@@ -4,10 +4,15 @@ import constants from '../../../../constants/styleConstants.module.scss';
 
 export type LabelProps = {
   label: string;
+  // eslint-disable-next-line react/require-default-props
   labelFor?: string;
+  // eslint-disable-next-line react/require-default-props
   fontColor?: string;
+  // eslint-disable-next-line react/require-default-props
   fontSize?: string;
+  // eslint-disable-next-line react/require-default-props
   fontWeight?: string;
+  // eslint-disable-next-line react/require-default-props
   onClick?: React.MouseEventHandler<HTMLLabelElement>;
 };
 
